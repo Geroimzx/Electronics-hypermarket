@@ -12,13 +12,13 @@ protected:
 	std::string brand;
 	std::string type;
 public:
-	int getID();
-	void setID(int ID);
+	long getID();
+	void setID(long ID);
 	bool isAvailable();
 	int getAvailable();
 	void setAvailable(int available);
 	float getPrice();
-	void setPrice(int price);
+	void setPrice(float price);
 	std::string getBrand();
 	void setBrand(std::string brand);
 	std::string getType();

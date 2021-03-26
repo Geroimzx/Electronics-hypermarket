@@ -56,30 +56,27 @@ void ShoppingCart::initShoppingCartAdd(int& id, int& amount)
 
 void ShoppingCart::addProduct(Product product, int amount)
 {
-	if (product.isAvailable() && product.getAvailable() >= amount)
-	{
-		outFile.open("ShoppingCart.txt", ios::app);
-		if (!inFile) {
+	outFile.open("ShoppingCart.txt", ios::app);
+	if (!inFile) {
 			cout << "Cannot open file" << endl;
-		}
-		else {
-			int scale = 10;
-			outFile.setf(ios::left);
-			cout << "\n|";
-			outFile << '\n';
-			outFile.width(scale);
-			outFile << product.getID();
-			outFile.width(scale);
-			outFile << amount;
-			outFile.width(scale);
-			outFile << product.getPrice();
-			outFile.width(scale);
-			outFile << product.getBrand();
-			outFile.width(scale);
-			outFile << product.getType();
-			outFile.close();
-			amountCheck();
-		}
+	}
+	else {
+		int scale = 10;
+		outFile.setf(ios::left);
+		cout << "\n|";
+		outFile << '\n';
+		outFile.width(scale);
+		outFile << product.getID();
+		outFile.width(scale);
+		outFile << amount;
+		outFile.width(scale);
+		outFile << product.getPrice();
+		outFile.width(scale);
+		outFile << product.getBrand();
+		outFile.width(scale);
+		outFile << product.getType();
+		outFile.close();
+		amountCheck();
 	}
 }
 

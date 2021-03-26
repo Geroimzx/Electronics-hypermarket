@@ -24,6 +24,7 @@ int main()
 	/*TODO зробити тут авторизацію і вхід до акаунту*/
 	ShoppingCart shoppingCart;
 	Smartphone smartphone;
+	Telephone telephone;
 
 	int choice = 0;
 	int categoryChoice = 0;
@@ -63,7 +64,7 @@ int main()
 				case 1:
 					check1:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!smartphone.getSmartphoneByID(id).isAvailable() && !smartphone.getSmartphoneByID(id).getAvailable() >= amount) {
+					if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount)) {
 						int tmp;	
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -99,7 +100,50 @@ int main()
 				system("cls");
 				cout << "-------------------------------------" << endl;
 				cout << "Телефони" << endl;
-				continue;
+				telephone.viewProducts("TelephoneList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+					check2:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!telephone.getTelephoneByID(id).isAvailable() && (telephone.getTelephoneByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check2;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (telephone.updateProductList(id, amount)) {
+						shoppingCart.addProduct(telephone.getTelephoneByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
 			case 3:
 				system("cls");
 				cout << "-------------------------------------" << endl;

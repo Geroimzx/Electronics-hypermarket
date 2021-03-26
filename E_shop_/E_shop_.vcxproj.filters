@@ -118,5 +118,8 @@
     <Text Include="ShoppingCart.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="TelephoneList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

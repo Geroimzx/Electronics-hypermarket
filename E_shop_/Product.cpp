@@ -1,11 +1,11 @@
 #include "Product.h"
 
-int Product::getID()
+long Product::getID()
 {
 	return ID;
 }
 
-void Product::setID(int ID)
+void Product::setID(long ID)
 {
 	this->ID = ID;
 }
@@ -32,7 +32,7 @@ float Product::getPrice()
 	return price;
 }
 
-void Product::setPrice(int price)
+void Product::setPrice(float price)
 {
 	this->price = price;
 }
