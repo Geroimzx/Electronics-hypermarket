@@ -20,10 +20,10 @@ using namespace std;
 int main()
 {
 	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);//відображення мови в консолі
-	/*TODO зробити тут авторизацію і вхід до акаунту*/
+	SetConsoleOutputCP(1251);//РІС–РґРѕР±СЂР°Р¶РµРЅРЅСЏ РјРѕРІРё РІ РєРѕРЅСЃРѕР»С–
+	/*TODO Р·СЂРѕР±РёС‚Рё С‚СѓС‚ Р°РІС‚РѕСЂРёР·Р°С†С–СЋ С– РІС…С–Рґ РґРѕ Р°РєР°СѓРЅС‚Сѓ*/
 	ShoppingCart shoppingCart;
-	/*Перша категорія*/
+	/*РџРµСЂС€Р° РєР°С‚РµРіРѕСЂС–СЏ*/
 	Smartphone smartphone;
 	Telephone telephone;
 	Cover cover;
@@ -35,7 +35,7 @@ int main()
 	ProtectiveGlass protectiveGlass;
 
 	SIMCard simCard;
-	/*Друга категорія*/
+	/*Р”СЂСѓРіР° РєР°С‚РµРіРѕСЂС–СЏ*/
 	
 
 
@@ -44,7 +44,7 @@ int main()
 	int pidmenu;
 	int id, amount;
 	cout << "-------------------------------------" << endl;
-	cout << "Гіпермаркет електроніки \"No Name\"" << endl;
+	cout << "Р“С–РїРµСЂРјР°СЂРєРµС‚ РµР»РµРєС‚СЂРѕРЅС–РєРё \"No Name\"" << endl;
 	cout << "-------------------------------------" << endl;
 
 
@@ -56,25 +56,25 @@ int main()
 		/*case1start----------------------------------------------------------*/
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Смартфони та телефони:" << endl;
-			cout << "Підкатегорії:" << endl;
-			cout << "1 - Смартфони" << endl;
-			cout << "2 - Телефони" << endl;
-			cout << "3 - Аксесуари" << endl;
-			cout << "4 - Стартові пакети" << endl;
-			cout << "5 - Вихід з категорії" << endl;
+			cout << "РЎРјР°СЂС‚С„РѕРЅРё С‚Р° С‚РµР»РµС„РѕРЅРё:" << endl;
+			cout << "РџС–РґРєР°С‚РµРіРѕСЂС–С—:" << endl;
+			cout << "1 - РЎРјР°СЂС‚С„РѕРЅРё" << endl;
+			cout << "2 - РўРµР»РµС„РѕРЅРё" << endl;
+			cout << "3 - РђРєСЃРµСЃСѓР°СЂРё" << endl;
+			cout << "4 - РЎС‚Р°СЂС‚РѕРІС– РїР°РєРµС‚Рё" << endl;
+			cout << "5 - Р’РёС…С–Рґ Р· РєР°С‚РµРіРѕСЂС–С—" << endl;
 			std::cin >> categoryChoice;
 			switch (categoryChoice)
 			{
 			case 1:
 				system("cls");
-				cout << "Смартфони" << endl;
+				cout << "РЎРјР°СЂС‚С„РѕРЅРё" << endl;
 				smartphone.viewProducts("SmartphonesList.txt");
 				cout << "-------------------------------------" << endl;
-				cout << "Підменю вибору:" << endl;
-				cout << "1 - Купити товар" << endl;
-				cout << "2 - Вийти в підкатегорії" << endl;
-				cout << "3 - Вийти в головне меню" << endl;
+				cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+				cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+				cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+				cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 				cin >> pidmenu;
 				switch (pidmenu)
 				{
@@ -83,46 +83,46 @@ int main()
 					shoppingCart.initShoppingCartAdd(id, amount);
 					if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount)) {
 						int tmp;	
-						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 						cin >> tmp;
 						if (tmp == 1) {
 							goto check1;
 						}
 						else if (tmp == 2) {
 							system("cls");
-							cout << "Вихід у головне меню" << endl;
+							cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 					}
 					else if(smartphone.updateProductList(id, amount)){
 						shoppingCart.addProduct(smartphone.getSmartphoneByID(id), amount);
 						system("cls");
-						cout << "Товар додано в корзину" << endl;
+						cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
 					system("cls");
-					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 					cout << "-------------------------------------" << endl;
 					continue;
 				case 3:
 					system("cls");
 					cout << "-------------------------------------" << endl;
-					cout << "Вихід у головне меню" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					break;
 				}
 				break;
 			case 2:
 				system("cls");
 				cout << "-------------------------------------" << endl;
-				cout << "Телефони" << endl;
+				cout << "РўРµР»РµС„РѕРЅРё" << endl;
 				telephone.viewProducts("TelephoneList.txt");
 				cout << "-------------------------------------" << endl;
-				cout << "Підменю вибору:" << endl;
-				cout << "1 - Купити товар" << endl;
-				cout << "2 - Вийти в підкатегорії" << endl;
-				cout << "3 - Вийти в головне меню" << endl;
+				cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+				cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+				cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+				cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 				cin >> pidmenu;
 				switch (pidmenu)
 				{
@@ -131,60 +131,60 @@ int main()
 					shoppingCart.initShoppingCartAdd(id, amount);
 					if (!telephone.getTelephoneByID(id).isAvailable() && (telephone.getTelephoneByID(id).getAvailable() < amount)) {
 						int tmp;
-						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 						cin >> tmp;
 						if (tmp == 1) {
 							goto check2;
 						}
 						else if (tmp == 2) {
 							system("cls");
-							cout << "Вихід у головне меню" << endl;
+							cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 					}
 					else if (telephone.updateProductList(id, amount)) {
 						shoppingCart.addProduct(telephone.getTelephoneByID(id), amount);
 						system("cls");
-						cout << "Товар додано в корзину" << endl;
+						cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
 					system("cls");
-					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 					cout << "-------------------------------------" << endl;
 					continue;
 				case 3:
 					system("cls");
 					cout << "-------------------------------------" << endl;
-					cout << "Вихід у головне меню" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					break;
 				}
 				break;
 			case 3:
 				system("cls");
 				cout << "-------------------------------------" << endl;
-				cout << "Аксесуари:" << endl;
-				cout << "Підкатегорії:" << endl;
-				cout << "1 - Чохли" << endl;
-				cout << "2 - Навушники" << endl;
-				cout << "3 - Портативні колонки" << endl;
-				cout << "4 - Bluetooth-гарнітури" << endl;
-				cout << "5 - Карти пам'яті" << endl;
-				cout << "6 - Захисні плівки та скло" << endl;
-				cout << "7 - Вихід з категорії" << endl;
+				cout << "РђРєСЃРµСЃСѓР°СЂРё:" << endl;
+				cout << "РџС–РґРєР°С‚РµРіРѕСЂС–С—:" << endl;
+				cout << "1 - Р§РѕС…Р»Рё" << endl;
+				cout << "2 - РќР°РІСѓС€РЅРёРєРё" << endl;
+				cout << "3 - РџРѕСЂС‚Р°С‚РёРІРЅС– РєРѕР»РѕРЅРєРё" << endl;
+				cout << "4 - Bluetooth-РіР°СЂРЅС–С‚СѓСЂРё" << endl;
+				cout << "5 - РљР°СЂС‚Рё РїР°Рј'СЏС‚С–" << endl;
+				cout << "6 - Р—Р°С…РёСЃРЅС– РїР»С–РІРєРё С‚Р° СЃРєР»Рѕ" << endl;
+				cout << "7 - Р’РёС…С–Рґ Р· РєР°С‚РµРіРѕСЂС–С—" << endl;
 				int tmp;
 				cin >> tmp;
 				switch (tmp) {
 				case 1:
 					cout << "-------------------------------------" << endl;
-					cout << "Чохли" << endl;
+					cout << "Р§РѕС…Р»Рё" << endl;
 					cover.viewProducts("CoverList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -193,45 +193,45 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!cover.getCoverByID(id).isAvailable() && (cover.getCoverByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check3;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (cover.updateProductList(id, amount)) {
 							shoppingCart.addProduct(cover.getCoverByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 2:
 					cout << "-------------------------------------" << endl;
-					cout << "Навушники" << endl;
+					cout << "РќР°РІСѓС€РЅРёРєРё" << endl;
 					headphone.viewProducts("HeadphoneList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -240,45 +240,45 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!headphone.getHeadphoneByID(id).isAvailable() && (headphone.getHeadphoneByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check4;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (headphone.updateProductList(id, amount)) {
 							shoppingCart.addProduct(headphone.getHeadphoneByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 3:
 					cout << "-------------------------------------" << endl;
-					cout << "Портативні колонки" << endl;
+					cout << "РџРѕСЂС‚Р°С‚РёРІРЅС– РєРѕР»РѕРЅРєРё" << endl;
 					portableSpeakers.viewProducts("PortableSpeakersList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -287,45 +287,45 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!portableSpeakers.getPortableSpeakersByID(id).isAvailable() && (portableSpeakers.getPortableSpeakersByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check5;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (portableSpeakers.updateProductList(id, amount)) {
 							shoppingCart.addProduct(portableSpeakers.getPortableSpeakersByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 4:
 					cout << "-------------------------------------" << endl;
-					cout << "Bluetooth-гарнітури" << endl;
+					cout << "Bluetooth-РіР°СЂРЅС–С‚СѓСЂРё" << endl;
 					bluetoothHeadset.viewProducts("BluetoothHeadsetList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -334,45 +334,45 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!bluetoothHeadset.getBluetoothHeadsetByID(id).isAvailable() && (bluetoothHeadset.getBluetoothHeadsetByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check6;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (bluetoothHeadset.updateProductList(id, amount)) {
 							shoppingCart.addProduct(bluetoothHeadset.getBluetoothHeadsetByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 5:
 					cout << "-------------------------------------" << endl;
-					cout << "Карти пам'яті" << endl;
+					cout << "РљР°СЂС‚Рё РїР°Рј'СЏС‚С–" << endl;
 					memoryCard.viewProducts("MemoryCardList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -381,45 +381,45 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!memoryCard.getMemoryCardByID(id).isAvailable() && (memoryCard.getMemoryCardByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check7;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (memoryCard.updateProductList(id, amount)) {
 							shoppingCart.addProduct(memoryCard.getMemoryCardByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 6:
 					cout << "-------------------------------------" << endl;
-					cout << "Захисні плівки та скло" << endl;
+					cout << "Р—Р°С…РёСЃРЅС– РїР»С–РІРєРё С‚Р° СЃРєР»Рѕ" << endl;
 					protectiveGlass.viewProducts("ProtectiveGlassList.txt");
 					cout << "-------------------------------------" << endl;
-					cout << "Підменю вибору:" << endl;
-					cout << "1 - Купити товар" << endl;
-					cout << "2 - Вийти в підкатегорії" << endl;
-					cout << "3 - Вийти в головне меню" << endl;
+					cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+					cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+					cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+					cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					cin >> pidmenu;
 					switch (pidmenu)
 					{
@@ -428,53 +428,53 @@ int main()
 						shoppingCart.initShoppingCartAdd(id, amount);
 						if (!protectiveGlass.getProtectiveGlassByID(id).isAvailable() && (protectiveGlass.getProtectiveGlassByID(id).getAvailable() < amount)) {
 							int tmp;
-							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 							cin >> tmp;
 							if (tmp == 1) {
 								goto check8;
 							}
 							else if (tmp == 2) {
 								system("cls");
-								cout << "Вихід у головне меню" << endl;
+								cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 								cout << "-------------------------------------" << endl;
 							}
 						}
 						else if (protectiveGlass.updateProductList(id, amount)) {
 							shoppingCart.addProduct(protectiveGlass.getProtectiveGlassByID(id), amount);
 							system("cls");
-							cout << "Товар додано в корзину" << endl;
+							cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
 						system("cls");
-						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 						cout << "-------------------------------------" << endl;
 						continue;
 					case 3:
 						system("cls");
 						cout << "-------------------------------------" << endl;
-						cout << "Вихід у головне меню" << endl;
+						cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 						break;
 					}
 					break;
 				case 7:
 					system("cls");
 					cout << "-------------------------------------" << endl;
-					cout << "Вихід у головне меню" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					break;
 				}
 				break;
 			case 4:
 				system("cls");
 				cout << "-------------------------------------" << endl;
-				cout << "Стартові пакети" << endl;
+				cout << "РЎС‚Р°СЂС‚РѕРІС– РїР°РєРµС‚Рё" << endl;
 				simCard.viewProducts("SIMCardList.txt");
 				cout << "-------------------------------------" << endl;
-				cout << "Підменю вибору:" << endl;
-				cout << "1 - Купити товар" << endl;
-				cout << "2 - Вийти в підкатегорії" << endl;
-				cout << "3 - Вийти в головне меню" << endl;
+				cout << "РџС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ:" << endl;
+				cout << "1 - РљСѓРїРёС‚Рё С‚РѕРІР°СЂ" << endl;
+				cout << "2 - Р’РёР№С‚Рё РІ РїС–РґРєР°С‚РµРіРѕСЂС–С—" << endl;
+				cout << "3 - Р’РёР№С‚Рё РІ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 				cin >> pidmenu;
 				switch (pidmenu)
 				{
@@ -483,40 +483,40 @@ int main()
 					shoppingCart.initShoppingCartAdd(id, amount);
 					if (!simCard.getSIMCardByID(id).isAvailable() && (simCard.getSIMCardByID(id).getAvailable() < amount)) {
 						int tmp;
-						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cout << "1 - РљСѓРїРёС‚Рё С–РЅС€РёР№ С‚РѕРІР°СЂ\n2 - Р’РёР№С‚Рё\n";
 						cin >> tmp;
 						if (tmp == 1) {
 							goto check9;
 						}
 						else if (tmp == 2) {
 							system("cls");
-							cout << "Вихід у головне меню" << endl;
+							cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 							cout << "-------------------------------------" << endl;
 						}
 					}
 					else if (simCard.updateProductList(id, amount)) {
 						shoppingCart.addProduct(simCard.getSIMCardByID(id), amount);
 						system("cls");
-						cout << "Товар додано в корзину" << endl;
+						cout << "РўРѕРІР°СЂ РґРѕРґР°РЅРѕ РІ РєРѕСЂР·РёРЅСѓ" << endl;
 						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
 					system("cls");
-					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РјРµРЅСЋ РїС–РґРєР°С‚РµРіРѕСЂС–Р№" << endl;
 					cout << "-------------------------------------" << endl;
 					continue;
 				case 3:
 					system("cls");
 					cout << "-------------------------------------" << endl;
-					cout << "Вихід у головне меню" << endl;
+					cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 					break;
 				}
 				break;
 			case 5:
 				system("cls");
 				cout << "-------------------------------------" << endl;
-				cout << "Вихід у головне меню" << endl;
+				cout << "Р’РёС…С–Рґ Сѓ РіРѕР»РѕРІРЅРµ РјРµРЅСЋ" << endl;
 				break;
 			}
 			break;
@@ -525,45 +525,45 @@ int main()
 		/*case2start----------------------------------------------------------*/
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Ноутбуки та комп'ютери:" << endl;
+			cout << "РќРѕСѓС‚Р±СѓРєРё С‚Р° РєРѕРјРї'СЋС‚РµСЂРё:" << endl;
 			break;
 		/*-------------------------------------------------------------*/
 		/*case2end----------------------------------------------------------*/
 		case 3:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Телевізори та мультимедіа:" << endl;
+			cout << "РўРµР»РµРІС–Р·РѕСЂРё С‚Р° РјСѓР»СЊС‚РёРјРµРґС–Р°:" << endl;
 			break;
 		case 4:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Смарт-годинники та гаджети:" << endl;
+			cout << "РЎРјР°СЂС‚-РіРѕРґРёРЅРЅРёРєРё С‚Р° РіР°РґР¶РµС‚Рё:" << endl;
 			break;
 		case 5:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Планшети та електронні книги:" << endl;
+			cout << "РџР»Р°РЅС€РµС‚Рё С‚Р° РµР»РµРєС‚СЂРѕРЅРЅС– РєРЅРёРіРё:" << endl;
 			break;
 		case 6:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Фото та відео:" << endl;
+			cout << "Р¤РѕС‚Рѕ С‚Р° РІС–РґРµРѕ:" << endl;
 			break;
 		case 7:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Корзина:" << endl;
+			cout << "РљРѕСЂР·РёРЅР°:" << endl;
 			shoppingCart.viewShoppingCart();
 			break;
 		case 8:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Профіль:" << endl;
+			cout << "РџСЂРѕС„С–Р»СЊ:" << endl;
 			break;
 		case 9:
 			system("cls");
 			cout << "-------------------------------------" << endl;
-			cout << "Вихід:" << endl;
+			cout << "Р’РёС…С–Рґ:" << endl;
 			cout << "-------------------------------------" << endl;
 			exit(0);
 		}
@@ -577,16 +577,16 @@ int main()
 void help()
 {
 	cout << "-------------------------------------" << endl;
-	cout << "Категорії товарів:" << endl;
-	cout << "1 - Смартфони та телефони" << endl;
-	cout << "2 - Ноутбуки та комп'ютери" << endl;
-	cout << "3 - Телевізори та мультимедіа" << endl;
-	cout << "4 - Смарт-годинники та гаджети" << endl;
-	cout << "5 - Планшети та електронні книги" << endl;
-	cout << "6 - Фото та відео" << endl;
+	cout << "РљР°С‚РµРіРѕСЂС–С— С‚РѕРІР°СЂС–РІ:" << endl;
+	cout << "1 - РЎРјР°СЂС‚С„РѕРЅРё С‚Р° С‚РµР»РµС„РѕРЅРё" << endl;
+	cout << "2 - РќРѕСѓС‚Р±СѓРєРё С‚Р° РєРѕРјРї'СЋС‚РµСЂРё" << endl;
+	cout << "3 - РўРµР»РµРІС–Р·РѕСЂРё С‚Р° РјСѓР»СЊС‚РёРјРµРґС–Р°" << endl;
+	cout << "4 - РЎРјР°СЂС‚-РіРѕРґРёРЅРЅРёРєРё С‚Р° РіР°РґР¶РµС‚Рё" << endl;
+	cout << "5 - РџР»Р°РЅС€РµС‚Рё С‚Р° РµР»РµРєС‚СЂРѕРЅРЅС– РєРЅРёРіРё" << endl;
+	cout << "6 - Р¤РѕС‚Рѕ С‚Р° РІС–РґРµРѕ" << endl;
 	cout << "-------------------------------------" << endl;
-	cout << "7 - Корзина" << endl;
-	cout << "8 - Профіль" << endl;
-	cout << "9 - Вихід з програми" << endl;
+	cout << "7 - РљРѕСЂР·РёРЅР°" << endl;
+	cout << "8 - РџСЂРѕС„С–Р»СЊ" << endl;
+	cout << "9 - Р’РёС…С–Рґ Р· РїСЂРѕРіСЂР°РјРё" << endl;
 	cout << "-------------------------------------" << endl;
 }
