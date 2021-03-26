@@ -1,0 +1,7 @@
+1 0 15000 Lenovo Смартфон 128 8 Snapdragon855 Android12 6.55 OLED 16 5 Чорний 5000 NFS
+2 5 3000 LG Смартфон 64 4 Snapdragon685 Android11 5.4 IPS 12 5 Чорний 3300 5G
+3 18 9999 Samsung Смартфон 128 4 Snapdragon720G Android11 6.5 Amoled 64 5 Бузковий 4500 GorillaGlass5
+4 49 9999 OPPO Смартфон 128 8 HelioP95 Android11 6.43 Amoled 48 32 Фіолетовий 4310 РозпізнаванняОбличчя
+5 60 21999 Apple Смартфон 64 4 A13Bionic AppleiOS 6.1 Retina 12 12 Чорний 3110 eSIM
+6 100 2899 Xiaomi Смартфон 32 2 HelioG25 Android10 6.53 IPS 13 5 Cірий 5000 РозпізнаванняОбличчя
+7 40 4999 Nokia Смартфон 64 4 Snapdragon662 Android10 6.39 IPS 48 16 Cиній 4000 LTE
