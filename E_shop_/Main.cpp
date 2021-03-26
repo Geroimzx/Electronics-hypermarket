@@ -19,8 +19,8 @@ void help();
 using namespace std;
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);//відображення мови в консолі
+	SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);//відображення мови в консолі
 	/*TODO зробити тут авторизацію і вхід до акаунту*/
 	ShoppingCart shoppingCart;
 	/*Перша категорія*/
