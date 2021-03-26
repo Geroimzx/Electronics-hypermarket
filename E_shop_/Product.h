@@ -24,11 +24,11 @@ public:
 	std::string getType();
 	void setType(std::string type);
 
-	//виводить таблицю товарів
+	//РІРёРІРѕРґРёС‚СЊ С‚Р°Р±Р»РёС†СЋ С‚РѕРІР°СЂС–РІ
 	virtual void viewProducts(std::string filePath);
-	//ініціалізує динамічний масив товарів за даними в файлі
+	//С–РЅС–С†С–Р°Р»С–Р·СѓС” РґРёРЅР°РјС–С‡РЅРёР№ РјР°СЃРёРІ С‚РѕРІР°СЂС–РІ Р·Р° РґР°РЅРёРјРё РІ С„Р°Р№Р»С–
 	virtual void initProduct(std::ifstream& file);
-	//оновлює лист товарів і повертає true якщо це вдалося і false якщо ні
+	//РѕРЅРѕРІР»СЋС” Р»РёСЃС‚ С‚РѕРІР°СЂС–РІ С– РїРѕРІРµСЂС‚Р°С” true СЏРєС‰Рѕ С†Рµ РІРґР°Р»РѕСЃСЏ С– false СЏРєС‰Рѕ РЅС–
 	virtual bool updateProductList(int id, int amount);
 };
 

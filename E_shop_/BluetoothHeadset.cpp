@@ -19,7 +19,7 @@ int BluetoothHeadset::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//Ô≥‰‡ıÛÌÓÍ ÚÓ‚‡≥‚ ‚ ÍÓÁËÌ≥
+	this->listSize = i - 1;//–ø—ñ–¥—Ä–∞—Ö—É–Ω–æ–∫ —Ç–æ–≤–∞—Ä—ñ–≤ –≤ –∫–æ—Ä–∑–∏–Ω—ñ
 	base.close();
 	return i;
 }
@@ -29,11 +29,11 @@ void BluetoothHeadset::viewProducts(string filePath)
 	int scale = 17;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Õ‡ˇ‚Ì≥ÒÚ¸" << "|";
-	cout << setw(scale) << "÷≥Ì‡" << "|";
-	cout << setw(scale) << "¡ÂÌ‰" << "|";
-	cout << setw(scale) << "“ËÔ" << "|";
-	cout << setw(scale) << "¬ÂÒ≥ˇ Bluetooth" << "|";
+	cout << setw(scale) << "–ù–∞—è–≤–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¶—ñ–Ω–∞" << "|";
+	cout << setw(scale) << "–ë—Ä–µ–Ω–¥" << "|";
+	cout << setw(scale) << "–¢–∏–ø" << "|";
+	cout << setw(scale) << "–í–µ—Ä—Å—ñ—è Bluetooth" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -102,7 +102,7 @@ bool BluetoothHeadset::updateProductList(int id, int amount)
 		return true;
 	}
 	else {
-		cout << "“Ó‚‡Û ÌÂÏ‡∫ ‚ Ì‡ˇÌÓÒÚ≥ ‚Ë·Â≥Ú¸ ·Û‰¸ Î‡ÒÍ‡ ≥Ì¯ËÈ ÚÓ‚‡\n";
+		cout << "–¢–æ–≤–∞—Ä—É –Ω–µ–º–∞—î –≤ –Ω–∞—è–Ω–æ—Å—Ç—ñ –≤–∏–±–µ—Ä—ñ—Ç—å –±—É–¥—å –ª–∞—Å–∫–∞ —ñ–Ω—à–∏–π —Ç–æ–≤–∞—Ä\n";
 		return false;
 	}
 }

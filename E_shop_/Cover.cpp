@@ -12,7 +12,7 @@ string Cover::getColor()
 
 Cover Cover::getCoverByID(int id)
 {
-    return ÒoverList[id - 1];
+    return —ÅoverList[id - 1];
 }
 
 int Cover::listSizeCheck()
@@ -24,7 +24,7 @@ int Cover::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//Ô≥‰‡ıÛÌÓÍ ÚÓ‚‡≥‚
+	this->listSize = i - 1;//–ø—ñ–¥—Ä–∞—Ö—É–Ω–æ–∫ —Ç–æ–≤–∞—Ä—ñ–≤
 	base.close();
 	return i;
 }
@@ -34,12 +34,12 @@ void Cover::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Õ‡ˇ‚Ì≥ÒÚ¸" << "|";
-	cout << setw(scale) << "÷≥Ì‡" << "|";
-	cout << setw(scale) << "¡ÂÌ‰" << "|";
-	cout << setw(scale) << "“ËÔ" << "|";
-	cout << setw(scale) << "—ÛÏ≥ÒÌ≥ÒÚ¸" << "|";
-	cout << setw(scale) << " ÓÎ≥" << "|";
+	cout << setw(scale) << "–ù–∞—è–≤–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¶—ñ–Ω–∞" << "|";
+	cout << setw(scale) << "–ë—Ä–µ–Ω–¥" << "|";
+	cout << setw(scale) << "–¢–∏–ø" << "|";
+	cout << setw(scale) << "–°—É–º—ñ—Å–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–ö–æ–ª—ñ—Ä" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -48,25 +48,25 @@ void Cover::viewProducts(string filePath)
 			cout << "Cannot open file" << endl;
 		listSizeCheck();
 
-		ÒoverList = new Cover[listSize];
+		—ÅoverList = new Cover[listSize];
 		for (int i = 0; i < listSize; i++)
 		{
-			ÒoverList[i].initProduct(inFile);
+			—ÅoverList[i].initProduct(inFile);
 			cout << "\n|";
 			cout.width(scale);
-			cout << ÒoverList[i].getID() << "|";
+			cout << —ÅoverList[i].getID() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getAvailable() << "|";
+			cout << —ÅoverList[i].getAvailable() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getPrice() << "|";
+			cout << —ÅoverList[i].getPrice() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getBrand() << "|";
+			cout << —ÅoverList[i].getBrand() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getType() << "|";
+			cout << —ÅoverList[i].getType() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getCompatible() << "|";
+			cout << —ÅoverList[i].getCompatible() << "|";
 			cout.width(scale);
-			cout << ÒoverList[i].getColor() << "|";
+			cout << —ÅoverList[i].getColor() << "|";
 		}
 		cout << "\n";
 		inFile.close();
@@ -90,9 +90,9 @@ void Cover::initProduct(std::ifstream& file)
 bool Cover::updateProductList(int id, int amount)
 {
 	listSizeCheck();
-	if (ÒoverList[id - 1].isAvailable() && ÒoverList[id - 1].getAvailable() >= amount)
+	if (—ÅoverList[id - 1].isAvailable() && —ÅoverList[id - 1].getAvailable() >= amount)
 	{
-		ÒoverList[id - 1].available -= amount;
+		—ÅoverList[id - 1].available -= amount;
 		listSizeCheck();
 		fstream outFile("CoverList.txt", ios::out);
 		if (!outFile)
@@ -100,19 +100,19 @@ bool Cover::updateProductList(int id, int amount)
 		outFile.setf(ios::left);
 		for (int i = 0; i < listSize; i++)
 		{
-			outFile << ÒoverList[i].ID << ' ';
-			outFile << ÒoverList[i].available << ' ';
-			outFile << ÒoverList[i].price << ' ';
-			outFile << ÒoverList[i].brand << ' ';
-			outFile << ÒoverList[i].type << ' ';
-			outFile << ÒoverList[i].compatible << ' ';
-			outFile << ÒoverList[i].color << '\n';
+			outFile << —ÅoverList[i].ID << ' ';
+			outFile << —ÅoverList[i].available << ' ';
+			outFile << —ÅoverList[i].price << ' ';
+			outFile << —ÅoverList[i].brand << ' ';
+			outFile << —ÅoverList[i].type << ' ';
+			outFile << —ÅoverList[i].compatible << ' ';
+			outFile << —ÅoverList[i].color << '\n';
 		}
 		outFile.close();
 		return true;
 	}
 	else {
-		cout << "“Ó‚‡Û ÌÂÏ‡∫ ‚ Ì‡ˇÌÓÒÚ≥ ‚Ë·Â≥Ú¸ ·Û‰¸ Î‡ÒÍ‡ ≥Ì¯ËÈ ÚÓ‚‡\n";
+		cout << "–¢–æ–≤–∞—Ä—É –Ω–µ–º–∞—î –≤ –Ω–∞—è–Ω–æ—Å—Ç—ñ –≤–∏–±–µ—Ä—ñ—Ç—å –±—É–¥—å –ª–∞—Å–∫–∞ —ñ–Ω—à–∏–π —Ç–æ–≤–∞—Ä\n";
 		return false;
 	}
 }

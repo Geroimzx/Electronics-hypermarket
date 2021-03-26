@@ -13,22 +13,22 @@ private:
     string compatible;
     string color;
 
-	Cover* сoverList;
+	Cover* СЃoverList;
 	int listSize;
 public:
 	string getCompatible();
 	string getColor();
 
-	//повертає об'єкт за ID
+	//РїРѕРІРµСЂС‚Р°С” РѕР±'С”РєС‚ Р·Р° ID
 	Cover getCoverByID(int id);
 
 	int listSizeCheck();
 
-	//виводить таблицю товарів
+	//РІРёРІРѕРґРёС‚СЊ С‚Р°Р±Р»РёС†СЋ С‚РѕРІР°СЂС–РІ
 	void viewProducts(string filePath) override;
-	//ініціалізує динамічний масив товарів за даними в файлі
+	//С–РЅС–С†С–Р°Р»С–Р·СѓС” РґРёРЅР°РјС–С‡РЅРёР№ РјР°СЃРёРІ С‚РѕРІР°СЂС–РІ Р·Р° РґР°РЅРёРјРё РІ С„Р°Р№Р»С–
 	void initProduct(std::ifstream& file) override;
-	//оновлює лист товарів і повертає true якщо це вдалося і false якщо ні
+	//РѕРЅРѕРІР»СЋС” Р»РёСЃС‚ С‚РѕРІР°СЂС–РІ С– РїРѕРІРµСЂС‚Р°С” true СЏРєС‰Рѕ С†Рµ РІРґР°Р»РѕСЃСЏ С– false СЏРєС‰Рѕ РЅС–
 	bool updateProductList(int id, int amount) override;
 };
 

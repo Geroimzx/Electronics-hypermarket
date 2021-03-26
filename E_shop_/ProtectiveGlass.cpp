@@ -24,7 +24,7 @@ int ProtectiveGlass::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//Ô≥‰‡ıÛÌÓÍ ÚÓ‚‡≥‚
+	this->listSize = i - 1;//–ø—ñ–¥—Ä–∞—Ö—É–Ω–æ–∫ —Ç–æ–≤–∞—Ä—ñ–≤
 	base.close();
 	return i;
 }
@@ -34,12 +34,12 @@ void ProtectiveGlass::viewProducts(string filePath)
 	int scale = 20;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Õ‡ˇ‚Ì≥ÒÚ¸" << "|";
-	cout << setw(scale) << "÷≥Ì‡" << "|";
-	cout << setw(scale) << "¡ÂÌ‰" << "|";
-	cout << setw(scale) << "“ËÔ" << "|";
-	cout << setw(scale) << "—ÛÏ≥ÒÌ≥ÒÚ¸" << "|";
-	cout << setw(scale) << "“ËÔ ÔÓÍËÚÚˇ" << "|";
+	cout << setw(scale) << "–ù–∞—è–≤–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¶—ñ–Ω–∞" << "|";
+	cout << setw(scale) << "–ë—Ä–µ–Ω–¥" << "|";
+	cout << setw(scale) << "–¢–∏–ø" << "|";
+	cout << setw(scale) << "–°—É–º—ñ—Å–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¢–∏–ø –ø–æ–∫—Ä–∏—Ç—Ç—è" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -112,7 +112,7 @@ bool ProtectiveGlass::updateProductList(int id, int amount)
 		return true;
 	}
 	else {
-		cout << "“Ó‚‡Û ÌÂÏ‡∫ ‚ Ì‡ˇÌÓÒÚ≥ ‚Ë·Â≥Ú¸ ·Û‰¸ Î‡ÒÍ‡ ≥Ì¯ËÈ ÚÓ‚‡\n";
+		cout << "–¢–æ–≤–∞—Ä—É –Ω–µ–º–∞—î –≤ –Ω–∞—è–Ω–æ—Å—Ç—ñ –≤–∏–±–µ—Ä—ñ—Ç—å –±—É–¥—å –ª–∞—Å–∫–∞ —ñ–Ω—à–∏–π —Ç–æ–≤–∞—Ä\n";
 		return false;
 	}
 }

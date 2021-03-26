@@ -17,10 +17,10 @@ void ShoppingCart::viewShoppingCart()
 		int scale = 14;
 		cout << "|";
 		cout << setw(scale) << "ID" << "|";
-		cout << setw(scale) << "Ê³ëüê³ñòü" << "|";
-		cout << setw(scale) << "Ö³íà" << "|";
-		cout << setw(scale) << "Áðåíä" << "|";
-		cout << setw(scale) << "Òèï" << "|";
+		cout << setw(scale) << "ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ" << "|";
+		cout << setw(scale) << "Ð¦Ñ–Ð½Ð°" << "|";
+		cout << setw(scale) << "Ð‘Ñ€ÐµÐ½Ð´" << "|";
+		cout << setw(scale) << "Ð¢Ð¸Ð¿" << "|";
 		Product* products = new Product[amount];
 		for (int i = 0; i < amount; i++)
 		{
@@ -41,16 +41,16 @@ void ShoppingCart::viewShoppingCart()
 		inFile.close();
 	}
 	else {
-		cout << "Êîøèê ïóñòèé\n";
+		cout << "ÐšÐ¾ÑˆÐ¸Ðº Ð¿ÑƒÑÑ‚Ð¸Ð¹\n";
 	}
 }
 
 void ShoppingCart::initShoppingCartAdd(int& id, int& amount)
 {
 	cout << "-------------------------------------" << endl;
-	cout << "Ââåä³òü ID òîâàðó:\n";
+	cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ID Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ:\n";
 	cin >> id;
-	cout << "Âåä³òü ê³ëüê³ñòü òîâàðó:\n";
+	cout << "Ð’ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ñ‚Ð¾Ð²Ð°Ñ€Ñƒ:\n";
 	cin >> amount;
 }
 

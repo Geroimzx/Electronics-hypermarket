@@ -11,21 +11,21 @@ void Smartphone::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Õ‡ˇ‚Ì≥ÒÚ¸" << "|";
-	cout << setw(scale) << "÷≥Ì‡" << "|";
-	cout << setw(scale) << "¡ÂÌ‰" << "|";
-	cout << setw(scale) << "“ËÔ" << "|";
+	cout << setw(scale) << "–ù–∞—è–≤–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¶—ñ–Ω–∞" << "|";
+	cout << setw(scale) << "–ë—Ä–µ–Ω–¥" << "|";
+	cout << setw(scale) << "–¢–∏–ø" << "|";
 	cout << setw(scale) << "ROM" << "|";
 	cout << setw(scale) << "RAM" << "|";
-	cout << setw(15) << "œÓˆÂÒÓ" << "|";
-	cout << setw(scale) << "Œ—" << "|";
-	cout << setw(scale) << "ƒ≥‡„ÓÌ‡Î¸ ÂÍ‡ÌÛ" << "|";
-	cout << setw(scale) << "“ËÔ ÂÍ‡ÌÛ" << "|";
-	cout << setw(scale) << "ŒÒÌÓ‚Ì‡ Í‡ÏÂ‡" << "|";
-	cout << setw(scale) << "‘ÓÌÚ‡Î¸Ì‡ Í‡ÏÂ‡" << "|";
-	cout << setw(scale) << " ÓÎ≥" << "|";
-	cout << setw(scale) << "™ÏÌ≥ÒÚ¸ ‡ÍÛÏÛÎˇÚÓ‡" << "|";
-	cout << setw(scale) << "ŒÒÓ·ÎË‚ÓÒÚ≥";
+	cout << setw(15) << "–ü—Ä–æ—Ü–µ—Å–æ—Ä" << "|";
+	cout << setw(scale) << "–û–°" << "|";
+	cout << setw(scale) << "–î—ñ–∞–≥–æ–Ω–∞–ª—å –µ–∫—Ä–∞–Ω—É" << "|";
+	cout << setw(scale) << "–¢–∏–ø –µ–∫—Ä–∞–Ω—É" << "|";
+	cout << setw(scale) << "–û—Å–Ω–æ–≤–Ω–∞ –∫–∞–º–µ—Ä–∞" << "|";
+	cout << setw(scale) << "–§—Ä–æ–Ω—Ç–∞–ª—å–Ω–∞ –∫–∞–º–µ—Ä–∞" << "|";
+	cout << setw(scale) << "–ö–æ–ª—ñ—Ä" << "|";
+	cout << setw(scale) << "–Ñ–º–Ω—ñ—Å—Ç—å –∞–∫—É–º—É–ª—è—Ç–æ—Ä–∞" << "|";
+	cout << setw(scale) << "–û—Å–æ–±–ª–∏–≤–æ—Å—Ç—ñ";
 	for (int i = 0; i < listSize; i++)
 	{
 		smartphoneList[i].initProduct(file);
@@ -122,7 +122,7 @@ bool Smartphone::updateProductList(int id, int amount)
 		outFile.close();
 		return true;
 	}else{
-		cout << "“Ó‚‡Û ÌÂÏ‡∫ ‚ Ì‡ˇÌÓÒÚ≥ ‚Ë·Â≥Ú¸ ·Û‰¸ Î‡ÒÍ‡ ≥Ì¯ËÈ ÚÓ‚‡\n";
+		cout << "–¢–æ–≤–∞—Ä—É –Ω–µ–º–∞—î –≤ –Ω–∞—è–Ω–æ—Å—Ç—ñ –≤–∏–±–µ—Ä—ñ—Ç—å –±—É–¥—å –ª–∞—Å–∫–∞ —ñ–Ω—à–∏–π —Ç–æ–≤–∞—Ä\n";
 		return false;
 	}
 }
@@ -141,7 +141,7 @@ int Smartphone::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//Ô≥‰‡ıÛÌÓÍ ÚÓ‚‡≥‚ ‚ ÍÓÁËÌ≥
+	this->listSize = i - 1;//–ø—ñ–¥—Ä–∞—Ö—É–Ω–æ–∫ —Ç–æ–≤–∞—Ä—ñ–≤ –≤ –∫–æ—Ä–∑–∏–Ω—ñ
 	base.close();
 	return i;
 }

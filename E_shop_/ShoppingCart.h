@@ -17,13 +17,13 @@ public:
 	ShoppingCart();
 
 	void viewShoppingCart();
-	//викликає підменю вибору товару за ID і кількістю
+	//РІРёРєР»РёРєР°С” РїС–РґРјРµРЅСЋ РІРёР±РѕСЂСѓ С‚РѕРІР°СЂСѓ Р·Р° ID С– РєС–Р»СЊРєС–СЃС‚СЋ
 	void initShoppingCartAdd(int& id, int& amount);
 	void addProduct(Product product, int amount);
-	void deleteProduct(int ID);//TODO видалення з корзини і перенос
+	void deleteProduct(int ID);//TODO РІРёРґР°Р»РµРЅРЅСЏ Р· РєРѕСЂР·РёРЅРё С– РїРµСЂРµРЅРѕСЃ
 	void clearShoppingCart();
 
-	//повертає кількість товарів в корзині
+	//РїРѕРІРµСЂС‚Р°С” РєС–Р»СЊРєС–СЃС‚СЊ С‚РѕРІР°СЂС–РІ РІ РєРѕСЂР·РёРЅС–
 	int amountCheck();
 };
 

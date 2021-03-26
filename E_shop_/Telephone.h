@@ -13,14 +13,14 @@ private:
 	Telephone* telephoneList;
 	int listSize;
 public:
-	//повертає об'єкт за ID
+	//РїРѕРІРµСЂС‚Р°С” РѕР±'С”РєС‚ Р·Р° ID
 	Telephone getTelephoneByID(int id);
 
 	int listSizeCheck();
 
-	//виводить таблицю товарів
+	//РІРёРІРѕРґРёС‚СЊ С‚Р°Р±Р»РёС†СЋ С‚РѕРІР°СЂС–РІ
 	void viewProducts(string filePath) override;
-	//оновлює лист товарів і повертає true якщо це вдалося і false якщо ні
+	//РѕРЅРѕРІР»СЋС” Р»РёСЃС‚ С‚РѕРІР°СЂС–РІ С– РїРѕРІРµСЂС‚Р°С” true СЏРєС‰Рѕ С†Рµ РІРґР°Р»РѕСЃСЏ С– false СЏРєС‰Рѕ РЅС–
 	bool updateProductList(int id, int amount) override;
 };
 
