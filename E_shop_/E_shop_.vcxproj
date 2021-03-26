@@ -168,7 +168,14 @@
     <ClInclude Include="Telephone.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BluetoothHeadsetList.txt" />
+    <Text Include="CoverList.txt" />
+    <Text Include="HeadphoneList.txt" />
+    <Text Include="MemoryCardList.txt" />
+    <Text Include="PortableSpeakersList.txt" />
+    <Text Include="ProtectiveGlassList.txt" />
     <Text Include="ShoppingCart.txt" />
+    <Text Include="SIMCardList.txt" />
     <Text Include="SmartphonesList.txt" />
     <Text Include="TelephoneList.txt" />
   </ItemGroup>

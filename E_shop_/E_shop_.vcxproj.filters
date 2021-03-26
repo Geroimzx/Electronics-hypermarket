@@ -70,7 +70,7 @@
       <Filter>Source Files\Products\SmartphonesAndTelephones\PhoneAccessories</Filter>
     </ClCompile>
     <ClCompile Include="SIMCard.cpp">
-      <Filter>Source Files\Products\SmartphonesAndTelephones\PhoneAccessories</Filter>
+      <Filter>Source Files\Products\SmartphonesAndTelephones</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,7 @@
       <Filter>Header Files\Products\SmartphonesAndTelephones\PhoneAccessories</Filter>
     </ClInclude>
     <ClInclude Include="SIMCard.h">
-      <Filter>Header Files\Products\SmartphonesAndTelephones\PhoneAccessories</Filter>
+      <Filter>Header Files\Products\SmartphonesAndTelephones</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +119,27 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="TelephoneList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="BluetoothHeadsetList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="CoverList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="HeadphoneList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="MemoryCardList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="PortableSpeakersList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ProtectiveGlassList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="SIMCardList.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

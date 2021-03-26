@@ -14,7 +14,7 @@ void ShoppingCart::viewShoppingCart()
 		if (!inFile)
 			cout << "Cannot open file" << endl;
 		amountCheck();
-		int scale = 10;
+		int scale = 14;
 		cout << "|";
 		cout << setw(scale) << "ID" << "|";
 		cout << setw(scale) << "Кількість" << "|";
