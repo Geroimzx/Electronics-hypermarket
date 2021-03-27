@@ -28,8 +28,6 @@ void Accessories::viewProducts(string filePath)
 	cout << setw(scale) << "Ціна" << "|";
 	cout << setw(scale) << "Бренд" << "|";
 	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Форм-фактор" << "|";
-	cout << setw(scale) << "Потужність" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -53,11 +51,6 @@ void Accessories::viewProducts(string filePath)
 			cout << accessoriesList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << accessoriesList[i].getType() << "|";
-
-			cout.width(scale);
-			cout << accessoriesList[i].formFactor << "|";
-			cout.width(scale);
-			cout << accessoriesList[i].outPower << "|";
 		}
 		cout << "\n";
 		inFile.close();
@@ -73,9 +66,6 @@ void Accessories::initProduct(std::ifstream& file)
 		file >> price;
 		file >> brand;
 		file >> type;
-
-		file >> formFactor;
-		file >> outPower;
 	}
 }
 
@@ -97,9 +87,6 @@ bool Accessories::updateProductList(int id, int amount)
 			outFile << accessoriesList[i].price << ' ';
 			outFile << accessoriesList[i].brand << ' ';
 			outFile << accessoriesList[i].type << ' ';
-
-			outFile << accessoriesList[i].formFactor << ' ';
-			outFile << accessoriesList[i].outPower << '\n';
 		}
 		outFile.close();
 		return true;

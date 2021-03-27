@@ -10,9 +10,6 @@ class Accessories :
     public Product
 {
 private:
-	string formFactor;
-	int outPower;
-
 	Accessories* accessoriesList;
 	int listSize;
 public:
