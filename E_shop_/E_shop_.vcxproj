@@ -221,6 +221,7 @@
     <Text Include="MemoryCardList.txt" />
     <Text Include="MotherboardsList.txt" />
     <Text Include="MultimediasList.txt" />
+    <Text Include="PhotoCamerasList.txt" />
     <Text Include="PortableSpeakersList.txt" />
     <Text Include="PowerSuppliesList.txt" />
     <Text Include="Printer3DList.txt" />
@@ -239,6 +240,7 @@
     <Text Include="TelephoneList.txt" />
     <Text Include="TVAccessoriesList.txt" />
     <Text Include="TVsList.txt" />
+    <Text Include="VideoCamerasList.txt" />
     <Text Include="VideocardsList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

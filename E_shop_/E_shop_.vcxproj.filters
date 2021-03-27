@@ -382,5 +382,11 @@
     <Text Include="EBooksList.txt">
       <Filter>Resource Files\TabletsAndE-books</Filter>
     </Text>
+    <Text Include="PhotoCamerasList.txt">
+      <Filter>Resource Files\PhotosAndVideos</Filter>
+    </Text>
+    <Text Include="VideoCamerasList.txt">
+      <Filter>Resource Files\PhotosAndVideos</Filter>
+    </Text>
   </ItemGroup>
 </Project>

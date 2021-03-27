@@ -1576,6 +1576,112 @@ int main()
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Фото та відео:" << endl;
+			cout << "Підкатегорії:" << endl;
+			cout << "1 - Фотокамери" << endl;
+			cout << "2 - Відеокамери" << endl;
+			cout << "3 - Вихід з категорії" << endl;
+			std::cin >> categoryChoice;
+			switch (categoryChoice) {
+			case 1:
+				system("cls");
+				cout << "Фотокамери" << endl;
+				photoCamera.viewProducts("PhotoCamerasList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check29:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!photoCamera.getPhotoCameraByID(id).isAvailable() && (photoCamera.getPhotoCameraByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check29;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (photoCamera.updateProductList(id, amount)) {
+						shoppingCart.addProduct(photoCamera.getPhotoCameraByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Відеокамери" << endl;
+				videoCamera.viewProducts("VideoCamerasList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check30:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!videoCamera.getVideoCameraByID(id).isAvailable() && (videoCamera.getVideoCameraByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check30;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (videoCamera.updateProductList(id, amount)) {
+						shoppingCart.addProduct(videoCamera.getVideoCameraByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
+				break;
+			}
 			break;
 		/*case6end----------------------------------------------------------*/
 		case 7:
