@@ -14,7 +14,7 @@ int Television::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//Ô≥‰‡ıÛÌÓÍ ÚÓ‚‡≥‚
+	this->listSize = i - 1;//–ø—ñ–¥—Ä–∞—Ö—É–Ω–æ–∫ —Ç–æ–≤–∞—Ä—ñ–≤
 	base.close();
 	return i;
 }
@@ -24,14 +24,14 @@ void Television::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Õ‡ˇ‚Ì≥ÒÚ¸" << "|";
-	cout << setw(scale) << "÷≥Ì‡" << "|";
-	cout << setw(scale) << "¡ÂÌ‰" << "|";
-	cout << setw(scale) << "“ËÔ" << "|";
-	cout << setw(scale) << "ƒ≥‡„ÓÌ‡Î¸" << "|";
-	cout << setw(scale) << "–ÓÁ‰≥Î¸Ì‡ Á‰‡ÚÌ≥ÒÚ¸" << "|";
-	cout << setw(scale) << "“ÂıÌÓÎÓ„≥ø" << "|";
-	cout << setw(scale) << "Œ—" << "|";
+	cout << setw(scale) << "–ù–∞—è–≤–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¶—ñ–Ω–∞" << "|";
+	cout << setw(scale) << "–ë—Ä–µ–Ω–¥" << "|";
+	cout << setw(scale) << "–¢–∏–ø" << "|";
+	cout << setw(scale) << "–î—ñ–∞–≥–æ–Ω–∞–ª—å" << "|";
+	cout << setw(scale) << "–†–æ–∑–¥—ñ–ª—å–Ω–∞ –∑–¥–∞—Ç–Ω—ñ—Å—Ç—å" << "|";
+	cout << setw(scale) << "–¢–µ—Ö–Ω–æ–ª–æ–≥—ñ—ó" << "|";
+	cout << setw(scale) << "–û–°" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -115,7 +115,7 @@ bool Television::updateProductList(int id, int amount)
 		return true;
 	}
 	else {
-		cout << "“Ó‚‡Û ÌÂÏ‡∫ ‚ Ì‡ˇÌÓÒÚ≥ ‚Ë·Â≥Ú¸ ·Û‰¸ Î‡ÒÍ‡ ≥Ì¯ËÈ ÚÓ‚‡\n";
+		cout << "–¢–æ–≤–∞—Ä—É –Ω–µ–º–∞—î –≤ –Ω–∞—è–Ω–æ—Å—Ç—ñ –≤–∏–±–µ—Ä—ñ—Ç—å –±—É–¥—å –ª–∞—Å–∫–∞ —ñ–Ω—à–∏–π —Ç–æ–≤–∞—Ä\n";
 		return false;
 	}
 }

@@ -14,28 +14,31 @@ void ShoppingCart::viewShoppingCart()
 		if (!inFile)
 			cout << "Cannot open file" << endl;
 		amountCheck();
-		int scale = 14;
+		int scale = 10;
 		cout << "|";
-		cout << setw(scale) << "ID" << "|";
-		cout << setw(scale) << "Кількість" << "|";
-		cout << setw(scale) << "Ціна" << "|";
-		cout << setw(scale) << "Бренд" << "|";
+		cout << setw(5) << "    №" << "|";
+		cout << setw(5) << "ID" << "|";
+		cout << setw(14) << " Кількість" << "|";
+		cout << setw(scale) << "      Ціна" << "|";
+		cout << setw(scale) << "     Бренд" << "|";
 		cout << setw(scale) << "Тип" << "|";
 		Product* products = new Product[amount];
 		for (int i = 0; i < amount; i++)
 		{
 			products[i].initProduct(inFile);
 			cout << "\n|";
-			cout.width(scale);
+			cout.width(5);
+			cout << i+1 << "|";
+			cout.width(5);
 			cout << products[i].getID() << "|";
-			cout.width(scale);
+			cout.width(10);
 			cout << products[i].getAvailable() << "|";
 			cout.width(scale);
 			cout << products[i].getPrice() << "|";
 			cout.width(scale);
 			cout << products[i].getBrand() << "|";
 			cout.width(scale);
-			cout << products[i].getType() << "|";
+			cout << products[i].getType();
 		}
 		cout << "\n";
 		inFile.close();

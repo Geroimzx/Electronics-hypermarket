@@ -1292,7 +1292,9 @@ int main()
 			cout << "3 - 3D принтери" << endl;
 			cout << "4 - Вихід з категорії" << endl;
 			std::cin >> categoryChoice;
-			switch (categoryChoice)
+			switch (categoryChoice) {
+				break;
+			}
 			break;
 		case 5:
 			system("cls");
