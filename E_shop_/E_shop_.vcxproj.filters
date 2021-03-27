@@ -19,12 +19,6 @@
     <Filter Include="Source Files\Products">
       <UniqueIdentifier>{b5a28ead-7287-423e-bc55-98e5c8355d0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Products\SmartphonesAndTelephones">
-      <UniqueIdentifier>{b1e2e311-7d7f-490d-8a66-a02581f96b91}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Products\SmartphonesAndTelephones\PhoneAccessories">
-      <UniqueIdentifier>{9a2d668d-e47d-4541-af3c-e7a382bb6676}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Products\SmartphonesAndTelephones">
       <UniqueIdentifier>{089fc9c5-a35d-4c98-a979-ce237bae9cf8}</UniqueIdentifier>
     </Filter>
@@ -84,6 +78,12 @@
     </Filter>
     <Filter Include="Resource Files\SmartphonesAndTelephones">
       <UniqueIdentifier>{442c235b-715c-4c00-b356-12c43b9bfbca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\SmartphonesAndTelephones">
+      <UniqueIdentifier>{b1e2e311-7d7f-490d-8a66-a02581f96b91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\SmartphonesAndTelephones\PhoneAccessories">
+      <UniqueIdentifier>{9a2d668d-e47d-4541-af3c-e7a382bb6676}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -375,6 +375,12 @@
     </Text>
     <Text Include="Printer3DList.txt">
       <Filter>Resource Files\SmartWatchesAndGadgets</Filter>
+    </Text>
+    <Text Include="TabletsList.txt">
+      <Filter>Resource Files\TabletsAndE-books</Filter>
+    </Text>
+    <Text Include="EBooksList.txt">
+      <Filter>Resource Files\TabletsAndE-books</Filter>
     </Text>
   </ItemGroup>
 </Project>

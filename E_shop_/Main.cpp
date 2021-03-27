@@ -1458,16 +1458,126 @@ int main()
 			}
 			break;
 		/*case4end----------------------------------------------------------*/
+		/*case5start----------------------------------------------------------*/
 		case 5:
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Планшети та електронні книги:" << endl;
+			cout << "Підкатегорії:" << endl;
+			cout << "1 - Планшети" << endl;
+			cout << "2 - Електронні книги" << endl;
+			cout << "3 - Вихід з категорії" << endl;
+			std::cin >> categoryChoice;
+			switch (categoryChoice) {
+			case 1:
+				system("cls");
+				cout << "Планшети" << endl;
+				tablet.viewProducts("TabletsList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check27:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!tablet.getTabletByID(id).isAvailable() && (tablet.getTabletByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check27;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (tablet.updateProductList(id, amount)) {
+						shoppingCart.addProduct(tablet.getTabletByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Електронні книги" << endl;
+				ebook.viewProducts("EBooksList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check28:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!ebook.getEBookByID(id).isAvailable() && (ebook.getEBookByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check28;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (ebook.updateProductList(id, amount)) {
+						shoppingCart.addProduct(ebook.getEBookByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
+				break;
+			}
 			break;
+		/*case5end----------------------------------------------------------*/
+		/*case6start----------------------------------------------------------*/
 		case 6:
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Фото та відео:" << endl;
 			break;
+		/*case6end----------------------------------------------------------*/
 		case 7:
 			system("cls");
 			cout << "-------------------------------------" << endl;

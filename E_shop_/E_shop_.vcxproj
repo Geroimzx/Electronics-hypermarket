@@ -215,6 +215,7 @@
     <Text Include="AccessoriesList.txt" />
     <Text Include="BluetoothHeadsetList.txt" />
     <Text Include="CoverList.txt" />
+    <Text Include="EBooksList.txt" />
     <Text Include="HeadphoneList.txt" />
     <Text Include="LaptopsList.txt" />
     <Text Include="MemoryCardList.txt" />
@@ -234,6 +235,7 @@
     <Text Include="SmartphonesList.txt" />
     <Text Include="SmartWatchesList.txt" />
     <Text Include="StoragesList.txt" />
+    <Text Include="TabletsList.txt" />
     <Text Include="TelephoneList.txt" />
     <Text Include="TVAccessoriesList.txt" />
     <Text Include="TVsList.txt" />
