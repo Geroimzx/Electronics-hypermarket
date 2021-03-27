@@ -31,6 +31,18 @@
     <Filter Include="Source Files\Products\SmartphonesAndTelephones\PhoneAccessories">
       <UniqueIdentifier>{d1d705da-b682-4de4-babc-e468f2ae494a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Products\LaptopsAndComputers">
+      <UniqueIdentifier>{3121d5b2-61bf-44ad-9115-b173d4577ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\LaptopsAndComputers">
+      <UniqueIdentifier>{4008d625-6c4c-4499-8fa3-2d2ca1144506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\LaptopsAndComputers\PCAccessories">
+      <UniqueIdentifier>{83bd888b-f25a-4c63-a095-c0b4eede35f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\LaptopsAndComputers\PCAccessories">
+      <UniqueIdentifier>{117fed87-230e-4205-8e11-2a501df14892}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -72,6 +84,39 @@
     <ClCompile Include="SIMCard.cpp">
       <Filter>Source Files\Products\SmartphonesAndTelephones</Filter>
     </ClCompile>
+    <ClCompile Include="Router.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers</Filter>
+    </ClCompile>
+    <ClCompile Include="Printer.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers</Filter>
+    </ClCompile>
+    <ClCompile Include="PCAccessories.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers</Filter>
+    </ClCompile>
+    <ClCompile Include="Laptop.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers</Filter>
+    </ClCompile>
+    <ClCompile Include="Accessories.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers</Filter>
+    </ClCompile>
+    <ClCompile Include="Videocard.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
+    <ClCompile Include="Storage.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerSupplies.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
+    <ClCompile Include="Motherboard.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
+    <ClCompile Include="DDR.cpp">
+      <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShoppingCart.h">
@@ -110,6 +155,39 @@
     <ClInclude Include="SIMCard.h">
       <Filter>Header Files\Products\SmartphonesAndTelephones</Filter>
     </ClInclude>
+    <ClInclude Include="Laptop.h">
+      <Filter>Header Files\Products\LaptopsAndComputers</Filter>
+    </ClInclude>
+    <ClInclude Include="PCAccessories.h">
+      <Filter>Header Files\Products\LaptopsAndComputers</Filter>
+    </ClInclude>
+    <ClInclude Include="Printer.h">
+      <Filter>Header Files\Products\LaptopsAndComputers</Filter>
+    </ClInclude>
+    <ClInclude Include="Router.h">
+      <Filter>Header Files\Products\LaptopsAndComputers</Filter>
+    </ClInclude>
+    <ClInclude Include="Accessories.h">
+      <Filter>Header Files\Products\LaptopsAndComputers</Filter>
+    </ClInclude>
+    <ClInclude Include="Motherboard.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerSupplies.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
+    <ClInclude Include="Videocard.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
+    <ClInclude Include="Storage.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
+    <ClInclude Include="DDR.h">
+      <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="SmartphonesList.txt">
@@ -140,6 +218,36 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="SIMCardList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="LaptopsList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="RountersList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="PrintersList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="VideocardsList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="ProcessorsList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="MotherboardsList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="StoragesList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="PowerSuppliesList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="RoutersList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="AccessoriesList.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

@@ -141,7 +141,7 @@ int Smartphone::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//підрахунок товарів в корзині
+	this->listSize = i - 1;//підрахунок товарів
 	base.close();
 	return i;
 }

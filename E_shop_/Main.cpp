@@ -13,6 +13,18 @@
 #include "PortableSpeakers.h"
 #include "ProtectiveGlass.h"
 #include "SIMCard.h"
+#include "Laptop.h"
+#include "Printer.h"
+#include "Router.h"
+#include "PCAccessories.h"
+#include "Videocard.h"
+#include "Processor.h"
+#include "Motherboard.h"
+#include "DDR.h"
+#include "Storage.h"
+#include "PowerSupplies.h"
+#include "Accessories.h"
+
 
 void help();
 
@@ -36,7 +48,21 @@ int main()
 
 	SIMCard simCard;
 	/*Друга категорія*/
+	Laptop laptop;
+	Printer printer;
+	Router router;
 	
+	Videocard videocard;
+	Processor processor;
+	Motherboard motherboard;
+	DDR ddr;
+	Storage storage;
+	PowerSupplies powerSupplies;
+
+	Accessories accessories;
+	/*Третя категорія*/
+
+
 
 
 	int choice = 0;
@@ -526,6 +552,514 @@ int main()
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Ноутбуки та комп'ютери:" << endl;
+			cout << "Підкатегорії:" << endl;
+			cout << "1 - Ноутбуки" << endl;
+			cout << "2 - Принтери" << endl;
+			cout << "3 - Роутери" << endl;
+			cout << "4 - Комплектуючі до ПК" << endl;
+			cout << "5 - Аксесуари" << endl;
+			cout << "6 - Вихід з категорії" << endl;
+			std::cin >> categoryChoice;
+			switch (categoryChoice)
+			{
+			case 1:
+				system("cls");
+				cout << "Ноутбуки" << endl;
+				laptop.viewProducts("LaptopsList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check10:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!laptop.getLaptopByID(id).isAvailable() && (laptop.getLaptopByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check10;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (laptop.updateProductList(id, amount)) {
+						shoppingCart.addProduct(laptop.getLaptopByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Принтери" << endl;
+				printer.viewProducts("PrintersList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check11:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!printer.getPrinterByID(id).isAvailable() && (printer.getPrinterByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check11;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (laptop.updateProductList(id, amount)) {
+						shoppingCart.addProduct(printer.getPrinterByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "Роутери" << endl;
+				router.viewProducts("RoutersList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check12:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!router.getRouterByID(id).isAvailable() && (router.getRouterByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check12;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (laptop.updateProductList(id, amount)) {
+						shoppingCart.addProduct(router.getRouterByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 4: 
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Комплектуючі до ПК:" << endl;
+				cout << "Підкатегорії:" << endl;
+				cout << "1 - Відеокарти" << endl;
+				cout << "2 - Процесори" << endl;
+				cout << "3 - Материнські плати" << endl;
+				cout << "4 - Пам'ять DDR" << endl;
+				cout << "5 - SSD і HDD накопичувачі" << endl;
+				cout << "6 - Блоки живлення" << endl;
+				cout << "7 - Вихід з категорії" << endl;
+				int tmp;
+				cin >> tmp;
+				switch (tmp) {
+				case 1:
+					cout << "-------------------------------------" << endl;
+					cout << "Відеокарти" << endl;
+					videocard.viewProducts("VideocardsList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check13:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!videocard.getVideocardByID(id).isAvailable() && (videocard.getVideocardByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check13;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (videocard.updateProductList(id, amount)) {
+							shoppingCart.addProduct(videocard.getVideocardByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 2:
+					cout << "-------------------------------------" << endl;
+					cout << "Процесори" << endl;
+					processor.viewProducts("ProcessorsList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check14:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!processor.getProcessorByID(id).isAvailable() && (processor.getProcessorByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check14;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (processor.updateProductList(id, amount)) {
+							shoppingCart.addProduct(processor.getProcessorByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 3:
+					cout << "-------------------------------------" << endl;
+					cout << "Материнські плати" << endl;
+					motherboard.viewProducts("MotherboardsList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check15:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!motherboard.getMotherboardByID(id).isAvailable() && (motherboard.getMotherboardByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check15;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (motherboard.updateProductList(id, amount)) {
+							shoppingCart.addProduct(motherboard.getMotherboardByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 4:
+					cout << "-------------------------------------" << endl;
+					cout << "Пам'ять DDR" << endl;
+					ddr.viewProducts("DDRsList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check16:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!ddr.getDDRByID(id).isAvailable() && (ddr.getDDRByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check16;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (ddr.updateProductList(id, amount)) {
+							shoppingCart.addProduct(ddr.getDDRByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 5:
+					cout << "-------------------------------------" << endl;
+					cout << "SSD і HDD накопичувачі" << endl;
+					storage.viewProducts("StoragesList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check17:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!storage.getStorageByID(id).isAvailable() && (storage.getStorageByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check17;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (storage.updateProductList(id, amount)) {
+							shoppingCart.addProduct(storage.getStorageByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 6:
+					cout << "-------------------------------------" << endl;
+					cout << "Блоки живлення" << endl;
+					powerSupplies.viewProducts("PowerSuppliesList.txt");
+					cout << "-------------------------------------" << endl;
+					cout << "Підменю вибору:" << endl;
+					cout << "1 - Купити товар" << endl;
+					cout << "2 - Вийти в підкатегорії" << endl;
+					cout << "3 - Вийти в головне меню" << endl;
+					cin >> pidmenu;
+					switch (pidmenu)
+					{
+					case 1:
+					check18:
+						shoppingCart.initShoppingCartAdd(id, amount);
+						if (!powerSupplies.getPowerSuppliesByID(id).isAvailable() && (powerSupplies.getPowerSuppliesByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check18;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (powerSupplies.updateProductList(id, amount)) {
+							shoppingCart.addProduct(powerSupplies.getPowerSuppliesByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+						break;
+					case 2:
+						system("cls");
+						cout << "Вихід у меню підкатегорій" << endl;
+						cout << "-------------------------------------" << endl;
+						continue;
+					case 3:
+						system("cls");
+						cout << "-------------------------------------" << endl;
+						cout << "Вихід у головне меню" << endl;
+						break;
+					}
+					break;
+				case 7:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 5:
+				system("cls");
+				cout << "Аксусуари" << endl;
+				accessories.viewProducts("AccessoriesList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check19:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!accessories.getAccessoriesByID(id).isAvailable() && (accessories.getAccessoriesByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check19;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (accessories.updateProductList(id, amount)) {
+						shoppingCart.addProduct(accessories.getAccessoriesByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 6:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
+				break;
+			}
 			break;
 		/*-------------------------------------------------------------*/
 		/*case2end----------------------------------------------------------*/

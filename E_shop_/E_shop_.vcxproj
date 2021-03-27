@@ -139,45 +139,77 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Accessories.cpp" />
     <ClCompile Include="BluetoothHeadset.cpp" />
     <ClCompile Include="Cover.cpp" />
+    <ClCompile Include="DDR.cpp" />
     <ClCompile Include="Headphone.cpp" />
+    <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryCard.cpp" />
+    <ClCompile Include="Motherboard.cpp" />
+    <ClCompile Include="PCAccessories.cpp" />
     <ClCompile Include="PhoneAccessories.cpp" />
     <ClCompile Include="PortableSpeakers.cpp" />
+    <ClCompile Include="PowerSupplies.cpp" />
+    <ClCompile Include="Printer.cpp" />
+    <ClCompile Include="Processor.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProtectiveGlass.cpp" />
+    <ClCompile Include="Router.cpp" />
     <ClCompile Include="ShoppingCart.cpp" />
     <ClCompile Include="SIMCard.cpp" />
     <ClCompile Include="Smartphone.cpp" />
+    <ClCompile Include="Storage.cpp" />
     <ClCompile Include="Telephone.cpp" />
+    <ClCompile Include="Videocard.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Accessories.h" />
     <ClInclude Include="BluetoothHeadset.h" />
     <ClInclude Include="Cover.h" />
+    <ClInclude Include="DDR.h" />
     <ClInclude Include="Headphone.h" />
+    <ClInclude Include="Laptop.h" />
     <ClInclude Include="MemoryCard.h" />
+    <ClInclude Include="Motherboard.h" />
+    <ClInclude Include="PCAccessories.h" />
     <ClInclude Include="PhoneAccessories.h" />
     <ClInclude Include="PortableSpeakers.h" />
+    <ClInclude Include="PowerSupplies.h" />
+    <ClInclude Include="Printer.h" />
+    <ClInclude Include="Processor.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="ProtectiveGlass.h" />
+    <ClInclude Include="Router.h" />
     <ClInclude Include="ShoppingCart.h" />
     <ClInclude Include="SIMCard.h" />
     <ClInclude Include="Smartphone.h" />
+    <ClInclude Include="Storage.h" />
     <ClInclude Include="Telephone.h" />
+    <ClInclude Include="Videocard.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="AccessoriesList.txt" />
     <Text Include="BluetoothHeadsetList.txt" />
     <Text Include="CoverList.txt" />
     <Text Include="HeadphoneList.txt" />
+    <Text Include="LaptopsList.txt" />
     <Text Include="MemoryCardList.txt" />
+    <Text Include="MotherboardsList.txt" />
     <Text Include="PortableSpeakersList.txt" />
+    <Text Include="PowerSuppliesList.txt" />
+    <Text Include="PrintersList.txt" />
+    <Text Include="ProcessorsList.txt" />
     <Text Include="ProtectiveGlassList.txt" />
+    <Text Include="RountersList.txt" />
+    <Text Include="RoutersList.txt" />
     <Text Include="ShoppingCart.txt" />
     <Text Include="SIMCardList.txt" />
     <Text Include="SmartphonesList.txt" />
+    <Text Include="StoragesList.txt" />
     <Text Include="TelephoneList.txt" />
+    <Text Include="VideocardsList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
