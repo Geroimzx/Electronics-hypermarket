@@ -24,6 +24,10 @@
 #include "Storage.h"
 #include "PowerSupplies.h"
 #include "Accessories.h"
+#include "Television.h"
+#include "Multimedia.h"
+#include "Projectors.h"
+#include "TVAccessories.h"
 
 
 void help();
@@ -61,8 +65,11 @@ int main()
 
 	Accessories accessories;
 	/*Третя категорія*/
-
-
+	Television television;
+	Multimedia multimedia;
+	Projectors projector;
+	TVAccessories tvAccessories;
+	/*Четверта категорія*/
 
 
 	int choice = 0;
@@ -1009,7 +1016,7 @@ int main()
 				break;
 			case 5:
 				system("cls");
-				cout << "Аксусуари" << endl;
+				cout << "Аксесуари" << endl;
 				accessories.viewProducts("AccessoriesList.txt");
 				cout << "-------------------------------------" << endl;
 				cout << "Підменю вибору:" << endl;
@@ -1063,15 +1070,229 @@ int main()
 			break;
 		/*-------------------------------------------------------------*/
 		/*case2end----------------------------------------------------------*/
+		/*case3start----------------------------------------------------------*/
+		/*-------------------------------------------------------------*/
 		case 3:
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Телевізори та мультимедіа:" << endl;
+			cout << "Підкатегорії:" << endl;
+			cout << "1 - Телевізори" << endl;
+			cout << "2 - Мультимедіа та звук" << endl;
+			cout << "3 - Проектори та екрани" << endl;
+			cout << "4 - Аксесуари для ТВ" << endl;
+			cout << "5 - Вихід з категорії" << endl;
+			std::cin >> categoryChoice;
+			switch (categoryChoice)
+			{
+			case 1:
+				system("cls");
+				cout << "Телевізори" << endl;
+				television.viewProducts("TVsList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check20:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!television.getTVByID(id).isAvailable() && (television.getTVByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check20;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (television.updateProductList(id, amount)) {
+						shoppingCart.addProduct(television.getTVByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Мультимедіа та звук" << endl;
+				multimedia.viewProducts("MultimediasList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check21:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!multimedia.getMultimediaByID(id).isAvailable() && (multimedia.getMultimediaByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check21;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (multimedia.updateProductList(id, amount)) {
+						shoppingCart.addProduct(multimedia.getMultimediaByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "Проектори та екрани" << endl;
+				projector.viewProducts("ProjectorsList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check22:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!projector.getProjectorByID(id).isAvailable() && (projector.getProjectorByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check22;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (projector.updateProductList(id, amount)) {
+						shoppingCart.addProduct(projector.getProjectorByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 4:
+				system("cls");
+				cout << "Аксесуари для ТВ" << endl;
+				tvAccessories.viewProducts("TVAccessoriesList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check23:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!tvAccessories.getTVAccessoriesByID(id).isAvailable() && (tvAccessories.getTVAccessoriesByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check23;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (tvAccessories.updateProductList(id, amount)) {
+						shoppingCart.addProduct(tvAccessories.getTVAccessoriesByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 5:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
+				break;
+			}
 			break;
+		/*-------------------------------------------------------------*/
+		/*case3end----------------------------------------------------------*/
 		case 4:
 			system("cls");
 			cout << "-------------------------------------" << endl;
 			cout << "Смарт-годинники та гаджети:" << endl;
+			cout << "Підкатегорії:" << endl;
+			cout << "1 - Смарт-годинники" << endl;
+			cout << "2 - Квадрокоптери" << endl;
+			cout << "3 - 3D принтери" << endl;
+			cout << "4 - Вихід з категорії" << endl;
+			std::cin >> categoryChoice;
+			switch (categoryChoice)
 			break;
 		case 5:
 			system("cls");

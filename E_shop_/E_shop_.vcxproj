@@ -219,10 +219,12 @@
     <Text Include="LaptopsList.txt" />
     <Text Include="MemoryCardList.txt" />
     <Text Include="MotherboardsList.txt" />
+    <Text Include="MultimediasList.txt" />
     <Text Include="PortableSpeakersList.txt" />
     <Text Include="PowerSuppliesList.txt" />
     <Text Include="PrintersList.txt" />
     <Text Include="ProcessorsList.txt" />
+    <Text Include="ProjectorsList.txt" />
     <Text Include="ProtectiveGlassList.txt" />
     <Text Include="RoutersList.txt" />
     <Text Include="ShoppingCart.txt" />
@@ -230,6 +232,8 @@
     <Text Include="SmartphonesList.txt" />
     <Text Include="StoragesList.txt" />
     <Text Include="TelephoneList.txt" />
+    <Text Include="TVAccessoriesList.txt" />
+    <Text Include="TVsList.txt" />
     <Text Include="VideocardsList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

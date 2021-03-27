@@ -355,5 +355,17 @@
     <Text Include="SIMCardList.txt">
       <Filter>Resource Files\SmartphonesAndTelephones</Filter>
     </Text>
+    <Text Include="TVsList.txt">
+      <Filter>Resource Files\TVsAndMultimedia</Filter>
+    </Text>
+    <Text Include="MultimediasList.txt">
+      <Filter>Resource Files\TVsAndMultimedia</Filter>
+    </Text>
+    <Text Include="ProjectorsList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="TVAccessoriesList.txt">
+      <Filter>Resource Files\TVsAndMultimedia</Filter>
+    </Text>
   </ItemGroup>
 </Project>
