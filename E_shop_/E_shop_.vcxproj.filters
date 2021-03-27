@@ -174,9 +174,6 @@
     <ClCompile Include="SmartWatches.cpp">
       <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
     </ClCompile>
-    <ClCompile Include="Quadcopter.cpp">
-      <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
-    </ClCompile>
     <ClCompile Include="Printer3D.cpp">
       <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
     </ClCompile>
@@ -191,6 +188,9 @@
     </ClCompile>
     <ClCompile Include="PhotoCamera.cpp">
       <Filter>Source Files\Products\PhotosAndVideos</Filter>
+    </ClCompile>
+    <ClCompile Include="Quadrocopter.cpp">
+      <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -278,9 +278,6 @@
     <ClInclude Include="SmartWatches.h">
       <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
     </ClInclude>
-    <ClInclude Include="Quadcopter.h">
-      <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
-    </ClInclude>
     <ClInclude Include="Printer3D.h">
       <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
     </ClInclude>
@@ -295,6 +292,9 @@
     </ClInclude>
     <ClInclude Include="PhotoCamera.h">
       <Filter>Header Files\Products\PhotosAndVideos</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadrocopter.h">
+      <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -366,6 +366,15 @@
     </Text>
     <Text Include="TVAccessoriesList.txt">
       <Filter>Resource Files\TVsAndMultimedia</Filter>
+    </Text>
+    <Text Include="SmartWatchesList.txt">
+      <Filter>Resource Files\SmartWatchesAndGadgets</Filter>
+    </Text>
+    <Text Include="QuadrocoptersList.txt">
+      <Filter>Resource Files\SmartWatchesAndGadgets</Filter>
+    </Text>
+    <Text Include="Printer3DList.txt">
+      <Filter>Resource Files\SmartWatchesAndGadgets</Filter>
     </Text>
   </ItemGroup>
 </Project>

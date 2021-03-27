@@ -6,21 +6,20 @@
 #include <fstream>
 
 using namespace std;
-class SmartWatches :
+class Quadrocopter :
     public Product
 {
 private:
-	string appointment;
-	string displayForm;
-	string displaySize;
-	string material;
-	int workTime;
+	string camera;
+	int flyTime;
+	int maxDistance;
+	float frequency;
 
-	SmartWatches* smartWatchesList;
+	Quadrocopter* quadrocopterList;
 	int listSize;
 public:
 	//повертає об'єкт за ID
-	SmartWatches getSmartWatchesByID(int id);
+	Quadrocopter getQuadrocopterByID(int id);
 
 	int listSizeCheck();
 

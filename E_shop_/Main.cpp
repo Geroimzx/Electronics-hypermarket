@@ -28,6 +28,13 @@
 #include "Multimedia.h"
 #include "Projectors.h"
 #include "TVAccessories.h"
+#include "SmartWatches.h"
+#include "Quadrocopter.h"
+#include "Printer3D.h"
+#include "Tablet.h"
+#include "EBook.h"
+#include "Photocamera.h"
+#include "VideoCamera.h"
 
 
 void help();
@@ -39,6 +46,7 @@ int main()
 	SetConsoleOutputCP(CP_UTF8);//відображення мови в консолі
 	/*TODO зробити тут авторизацію і вхід до акаунту*/
 	ShoppingCart shoppingCart;
+
 	/*Перша категорія*/
 	Smartphone smartphone;
 	Telephone telephone;
@@ -70,8 +78,16 @@ int main()
 	Projectors projector;
 	TVAccessories tvAccessories;
 	/*Четверта категорія*/
-
-
+	SmartWatches smartWatch;
+	Quadrocopter quadrocopter;
+	Printer3D printer3D;
+	/*П'ята категорія*/
+	Tablet tablet;
+	EBook ebook;
+	/*Шоста категорія*/
+	PhotoCamera photoCamera;
+	VideoCamera videoCamera;
+	/*------------------*/
 	int choice = 0;
 	int categoryChoice = 0;
 	int pidmenu;
@@ -79,7 +95,6 @@ int main()
 	cout << "-------------------------------------" << endl;
 	cout << "Гіпермаркет електроніки \"No Name\"" << endl;
 	cout << "-------------------------------------" << endl;
-
 
 	while (true)
 	{
@@ -1282,6 +1297,7 @@ int main()
 			break;
 		/*-------------------------------------------------------------*/
 		/*case3end----------------------------------------------------------*/
+		/*case4start----------------------------------------------------------*/
 		case 4:
 			system("cls");
 			cout << "-------------------------------------" << endl;
@@ -1293,9 +1309,155 @@ int main()
 			cout << "4 - Вихід з категорії" << endl;
 			std::cin >> categoryChoice;
 			switch (categoryChoice) {
+			case 1:
+				system("cls");
+				cout << "Смарт-годинники" << endl;
+				smartWatch.viewProducts("SmartWatchesList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check24:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!smartWatch.getSmartWatchesByID(id).isAvailable() && (smartWatch.getSmartWatchesByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check24;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (smartWatch.updateProductList(id, amount)) {
+						shoppingCart.addProduct(smartWatch.getSmartWatchesByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Квадрокоптери" << endl;
+				quadrocopter.viewProducts("QuadrocoptersList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check25:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!quadrocopter.getQuadrocopterByID(id).isAvailable() && (quadrocopter.getQuadrocopterByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check25;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (quadrocopter.updateProductList(id, amount)) {
+						shoppingCart.addProduct(quadrocopter.getQuadrocopterByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 3:
+				system("cls");
+				cout << "3D принтери" << endl;
+				printer3D.viewProducts("Printer3DList.txt");
+				cout << "-------------------------------------" << endl;
+				cout << "Підменю вибору:" << endl;
+				cout << "1 - Купити товар" << endl;
+				cout << "2 - Вийти в підкатегорії" << endl;
+				cout << "3 - Вийти в головне меню" << endl;
+				cin >> pidmenu;
+				switch (pidmenu)
+				{
+				case 1:
+				check26:
+					shoppingCart.initShoppingCartAdd(id, amount);
+					if (!printer3D.getPrinter3DByID(id).isAvailable() && (printer3D.getPrinter3DByID(id).getAvailable() < amount)) {
+						int tmp;
+						cout << "1 - Купити інший товар\n2 - Вийти\n";
+						cin >> tmp;
+						if (tmp == 1) {
+							goto check26;
+						}
+						else if (tmp == 2) {
+							system("cls");
+							cout << "Вихід у головне меню" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else if (printer3D.updateProductList(id, amount)) {
+						shoppingCart.addProduct(printer3D.getPrinter3DByID(id), amount);
+						system("cls");
+						cout << "Товар додано в корзину" << endl;
+						cout << "-------------------------------------" << endl;
+					}
+					break;
+				case 2:
+					system("cls");
+					cout << "Вихід у меню підкатегорій" << endl;
+					cout << "-------------------------------------" << endl;
+					continue;
+				case 3:
+					system("cls");
+					cout << "-------------------------------------" << endl;
+					cout << "Вихід у головне меню" << endl;
+					break;
+				}
+				break;
+			case 4:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
 				break;
 			}
 			break;
+		/*case4end----------------------------------------------------------*/
 		case 5:
 			system("cls");
 			cout << "-------------------------------------" << endl;

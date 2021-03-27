@@ -161,7 +161,7 @@
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="Projectors.cpp" />
     <ClCompile Include="ProtectiveGlass.cpp" />
-    <ClCompile Include="Quadcopter.cpp" />
+    <ClCompile Include="Quadrocopter.cpp" />
     <ClCompile Include="Router.cpp" />
     <ClCompile Include="ShoppingCart.cpp" />
     <ClCompile Include="SIMCard.cpp" />
@@ -197,7 +197,7 @@
     <ClInclude Include="Product.h" />
     <ClInclude Include="Projectors.h" />
     <ClInclude Include="ProtectiveGlass.h" />
-    <ClInclude Include="Quadcopter.h" />
+    <ClInclude Include="Quadrocopter.h" />
     <ClInclude Include="Router.h" />
     <ClInclude Include="ShoppingCart.h" />
     <ClInclude Include="SIMCard.h" />
@@ -222,14 +222,17 @@
     <Text Include="MultimediasList.txt" />
     <Text Include="PortableSpeakersList.txt" />
     <Text Include="PowerSuppliesList.txt" />
+    <Text Include="Printer3DList.txt" />
     <Text Include="PrintersList.txt" />
     <Text Include="ProcessorsList.txt" />
     <Text Include="ProjectorsList.txt" />
     <Text Include="ProtectiveGlassList.txt" />
+    <Text Include="QuadrocoptersList.txt" />
     <Text Include="RoutersList.txt" />
     <Text Include="ShoppingCart.txt" />
     <Text Include="SIMCardList.txt" />
     <Text Include="SmartphonesList.txt" />
+    <Text Include="SmartWatchesList.txt" />
     <Text Include="StoragesList.txt" />
     <Text Include="TelephoneList.txt" />
     <Text Include="TVAccessoriesList.txt" />
