@@ -43,6 +43,48 @@
     <Filter Include="Source Files\Products\LaptopsAndComputers\PCAccessories">
       <UniqueIdentifier>{117fed87-230e-4205-8e11-2a501df14892}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Products\TVsAndMultimedia">
+      <UniqueIdentifier>{f61f5343-2561-49b0-85ac-29fb261bd616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\TVsAndMultimedia">
+      <UniqueIdentifier>{112edc9c-407b-485a-a5e5-3375109fe1d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\SmartWatchesAndGadgets">
+      <UniqueIdentifier>{15741f1c-0d2a-41a3-9033-814f71488589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\SmartWatchesAndGadgets">
+      <UniqueIdentifier>{84a6d670-49c3-4715-b7d7-2a0d9c5700ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\TabletsAndE-books">
+      <UniqueIdentifier>{1cd91a39-d087-441e-b6d7-209432e61e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\TabletsAndE-books">
+      <UniqueIdentifier>{533cda6a-27f9-4472-bed9-251e325dd1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Products\PhotosAndVideos">
+      <UniqueIdentifier>{fd738073-f583-4cd7-8792-4ca2605ec117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Products\PhotosAndVideos">
+      <UniqueIdentifier>{7bd98bf2-2740-4cd3-ba81-58ceb982ae27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\LaptopsAndComputers">
+      <UniqueIdentifier>{f2940445-c7ad-4a69-9d2b-ea425f77cf41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\PhotosAndVideos">
+      <UniqueIdentifier>{2facf42e-a021-4f7b-a7e2-8d64c31ce53a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\TabletsAndE-books">
+      <UniqueIdentifier>{f1537b90-3b5a-4837-a766-d933c3a1d991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SmartWatchesAndGadgets">
+      <UniqueIdentifier>{eebb3c9b-4869-432e-9c6f-0607dda79cf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\TVsAndMultimedia">
+      <UniqueIdentifier>{62f13a61-ec59-44e5-8ef5-1c49b8fda51b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SmartphonesAndTelephones">
+      <UniqueIdentifier>{442c235b-715c-4c00-b356-12c43b9bfbca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -117,6 +159,39 @@
     <ClCompile Include="DDR.cpp">
       <Filter>Source Files\Products\LaptopsAndComputers\PCAccessories</Filter>
     </ClCompile>
+    <ClCompile Include="Television.cpp">
+      <Filter>Source Files\Products\TVsAndMultimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="TVAccessories.cpp">
+      <Filter>Source Files\Products\TVsAndMultimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectors.cpp">
+      <Filter>Source Files\Products\TVsAndMultimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="Multimedia.cpp">
+      <Filter>Source Files\Products\TVsAndMultimedia</Filter>
+    </ClCompile>
+    <ClCompile Include="SmartWatches.cpp">
+      <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Quadcopter.cpp">
+      <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Printer3D.cpp">
+      <Filter>Source Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Tablet.cpp">
+      <Filter>Source Files\Products\TabletsAndE-books</Filter>
+    </ClCompile>
+    <ClCompile Include="EBook.cpp">
+      <Filter>Source Files\Products\TabletsAndE-books</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoCamera.cpp">
+      <Filter>Source Files\Products\PhotosAndVideos</Filter>
+    </ClCompile>
+    <ClCompile Include="PhotoCamera.cpp">
+      <Filter>Source Files\Products\PhotosAndVideos</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShoppingCart.h">
@@ -188,67 +263,97 @@
     <ClInclude Include="DDR.h">
       <Filter>Header Files\Products\LaptopsAndComputers\PCAccessories</Filter>
     </ClInclude>
+    <ClInclude Include="Television.h">
+      <Filter>Header Files\Products\TVsAndMultimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="TVAccessories.h">
+      <Filter>Header Files\Products\TVsAndMultimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectors.h">
+      <Filter>Header Files\Products\TVsAndMultimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="Multimedia.h">
+      <Filter>Header Files\Products\TVsAndMultimedia</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartWatches.h">
+      <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadcopter.h">
+      <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Printer3D.h">
+      <Filter>Header Files\Products\SmartWatchesAndGadgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablet.h">
+      <Filter>Header Files\Products\TabletsAndE-books</Filter>
+    </ClInclude>
+    <ClInclude Include="EBook.h">
+      <Filter>Header Files\Products\TabletsAndE-books</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoCamera.h">
+      <Filter>Header Files\Products\PhotosAndVideos</Filter>
+    </ClInclude>
+    <ClInclude Include="PhotoCamera.h">
+      <Filter>Header Files\Products\PhotosAndVideos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="SmartphonesList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="ShoppingCart.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="TelephoneList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="BluetoothHeadsetList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="CoverList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="HeadphoneList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="MemoryCardList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="PortableSpeakersList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="ProtectiveGlassList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="SIMCardList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="LaptopsList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="RountersList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="PrintersList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="VideocardsList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="ProcessorsList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="MotherboardsList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="StoragesList.txt">
-      <Filter>Resource Files</Filter>
+    <Text Include="AccessoriesList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
     </Text>
     <Text Include="PowerSuppliesList.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="MotherboardsList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="LaptopsList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="StoragesList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="VideocardsList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
     </Text>
     <Text Include="RoutersList.txt">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
     </Text>
-    <Text Include="AccessoriesList.txt">
-      <Filter>Resource Files</Filter>
+    <Text Include="PrintersList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="ProcessorsList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
+    <Text Include="BluetoothHeadsetList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="CoverList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="HeadphoneList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="MemoryCardList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="PortableSpeakersList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="ProtectiveGlassList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="TelephoneList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="SmartphonesList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
+    </Text>
+    <Text Include="SIMCardList.txt">
+      <Filter>Resource Files\SmartphonesAndTelephones</Filter>
     </Text>
   </ItemGroup>
 </Project>

@@ -8,7 +8,7 @@ Router Router::getRouterByID(int id)
 int Router::listSizeCheck()
 {
 	int i = 0;
-	ifstream base("RountersList.txt");
+	ifstream base("RoutersList.txt");
 	while (!base.eof())
 	{
 		base.getline(new char[1024], 1024, '\n');
@@ -89,7 +89,7 @@ bool Router::updateProductList(int id, int amount)
 	{
 		routerList[id - 1].available -= amount;
 		listSizeCheck();
-		fstream outFile("PrintersList.txt", ios::out);
+		fstream outFile("RoutersList.txt", ios::out);
 		if (!outFile)
 			cout << "Cannot open file\n" << endl;
 		outFile.setf(ios::left);
