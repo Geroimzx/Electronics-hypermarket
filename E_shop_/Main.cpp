@@ -1682,9 +1682,45 @@ int main()
 		/*case6end----------------------------------------------------------*/
 		case 7:
 			system("cls");
+		cart:
 			cout << "-------------------------------------" << endl;
 			cout << "Корзина:" << endl;
 			shoppingCart.viewShoppingCart();
+			cout << "Виберіть дію:" << endl;
+			cout << "1 - Купити" << endl;
+			cout << "2 - Видалити товар з корзини" << endl;
+			cout << "3 - Видалити всі товари з корзини" << endl;
+			cout << "4 - Вийти в головне меню" << endl;
+			int tmp;
+			cin >> tmp;
+			switch (tmp)
+			{
+			case 1:
+				//shoppingCart.pay();
+				break;
+			case 2:
+				cout << "Введіть номер товару в корзині, який ви хочете видалити:" << endl;
+				cin >> tmp;
+				if (tmp > 0 && tmp <= shoppingCart.amountCheck()) {
+					system("cls");
+					shoppingCart.deleteProduct(tmp);
+					cout << "Товар виделено з корзини" << endl;
+					goto cart;
+				}
+				cout << "Номер товару введено неправильно" << endl;
+				break;
+			case 3:
+				system("cls");
+				shoppingCart.clearShoppingCart();
+				cout << "Всі товари виделено з корзини" << endl;
+				goto cart;
+				break;
+			case 4:
+				system("cls");
+				cout << "-------------------------------------" << endl;
+				cout << "Вихід у головне меню" << endl;
+				break;
+			}
 			break;
 		case 8:
 			system("cls");

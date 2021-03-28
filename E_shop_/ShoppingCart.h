@@ -13,14 +13,16 @@ private:
 	int amount;
 	ifstream inFile;
 	fstream outFile;
-public:
-	ShoppingCart();
 
+	Product* products;
+public:
 	void viewShoppingCart();
 	//викликає підменю вибору товару за ID і кількістю
 	void initShoppingCartAdd(int& id, int& amount);
 	void addProduct(Product product, int amount);
-	void deleteProduct(int ID);//TODO видалення з корзини і перенос
+	//видалення з корзини
+	void deleteProduct(int ID);
+	//очистити корзину
 	void clearShoppingCart();
 
 	//повертає кількість товарів в корзині

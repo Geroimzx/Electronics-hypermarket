@@ -1,14 +1,8 @@
 #include "ShoppingCart.h"
 
-ShoppingCart::ShoppingCart()
-{
-	amount = 0;
-	oplata = 0;
-}
-
 void ShoppingCart::viewShoppingCart()
 {
-	if (amountCheck() > 0)
+	if (amountCheck() > 1)
 	{
 		inFile.open("ShoppingCart.txt");
 		if (!inFile)
@@ -22,7 +16,7 @@ void ShoppingCart::viewShoppingCart()
 		cout << setw(scale) << "      Ціна" << "|";
 		cout << setw(scale) << "     Бренд" << "|";
 		cout << setw(scale) << "Тип" << "|";
-		Product* products = new Product[amount];
+		products = new Product[amount];
 		for (int i = 0; i < amount; i++)
 		{
 			products[i].initProduct(inFile);
@@ -83,12 +77,59 @@ void ShoppingCart::addProduct(Product product, int amount)
 	}
 }
 
-void ShoppingCart::deleteProduct(int ID)
+void ShoppingCart::deleteProduct(int number)
 {
+	if (amountCheck() > 1)
+	{
+		inFile.open("ShoppingCart.txt");
+		if (!inFile) {
+			cout << "Cannot open file" << endl;
+		}
+		else {
+			amountCheck();
+			products = new Product[amount];
+			for (int i = 0; i < amount; i++)
+			{
+				products[i].initProduct(inFile);
+			}
+			inFile.close();
+			fstream outFile("ShoppingCart.txt", ios::out);
+			if (!outFile) {
+				cout << "Cannot open file\n" << endl;
+			}else {
+				int scale = 10;
+				outFile.setf(ios::left);
+				for (int i = 0; i < amount; i++)
+				{
+					if ((i + 1) != number)
+					{
+						outFile << '\n';
+						outFile.width(scale);
+						outFile << products[i].getID();
+						outFile.width(scale);
+						outFile << products[i].getAvailable();
+						outFile.width(scale);
+						outFile << products[i].getPrice();
+						outFile.width(scale);
+						outFile << products[i].getBrand();
+						outFile.width(scale);
+						outFile << products[i].getType();
+					}
+				}
+			}
+			outFile.close();
+		}
+	}
+	else {
+		clearShoppingCart();
+	}
 }
 
 void ShoppingCart::clearShoppingCart()
 {
+	ofstream oFile;
+	oFile.open("ShoppingCart.txt", ios::out | ios::trunc);
+	oFile.close();
 }
 
 int ShoppingCart::amountCheck()
