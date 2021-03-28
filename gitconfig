@@ -1,4 +1,0 @@
-[filter "ANSI"]
-        clean = iconv -f ANSI -t utf-8
-        smudge = iconv -f utf-8 -t ANSI
-        required
