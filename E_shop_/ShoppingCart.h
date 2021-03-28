@@ -9,7 +9,7 @@ using namespace std;
 class ShoppingCart
 {
 private:
-	int oplata;
+	float oplata;
 	int amount;
 	ifstream inFile;
 	fstream outFile;

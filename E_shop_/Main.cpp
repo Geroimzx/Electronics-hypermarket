@@ -1696,10 +1696,13 @@ int main()
 			switch (tmp)
 			{
 			case 1:
+				system("cls");
 				cout << "-------------------------------------" << endl;
 				cout << "Загальна сума до оплати: " << shoppingCart.pay() << endl;
-				cout << "Ви успішно оформили замовлення" << endl;
-				shoppingCart.clearShoppingCart();
+				if (shoppingCart.pay() > 0) {
+					cout << "Ви успішно оформили замовлення" << endl;
+					shoppingCart.clearShoppingCart();
+				}
 				break;
 			case 2:
 				cout << "Введіть номер товару в корзині, який ви хочете видалити:" << endl;
