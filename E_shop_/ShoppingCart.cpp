@@ -36,6 +36,8 @@ void ShoppingCart::viewShoppingCart()
 		}
 		cout << "\n";
 		inFile.close();
+		amountCheck();
+		cout << "Загальна сума до оплати: " << pay() << endl;
 	}
 	else {
 		cout << "Кошик пустий\n";
@@ -79,7 +81,7 @@ void ShoppingCart::addProduct(Product product, int amount)
 
 void ShoppingCart::deleteProduct(int number)
 {
-	if (amountCheck() > 1)
+	if (amountCheck() > 0)
 	{
 		inFile.open("ShoppingCart.txt");
 		if (!inFile) {
@@ -130,6 +132,30 @@ void ShoppingCart::clearShoppingCart()
 	ofstream oFile;
 	oFile.open("ShoppingCart.txt", ios::out | ios::trunc);
 	oFile.close();
+}
+
+int ShoppingCart::pay()
+{
+	if (amountCheck() > 1)
+	{
+		inFile.open("ShoppingCart.txt");
+		if (!inFile)
+			cout << "Cannot open file" << endl;
+		amountCheck();
+		products = new Product[amount];
+		for (int i = 0; i < amount; i++)
+		{
+			products[i].initProduct(inFile);
+			oplata += products[i].getPrice();
+		}
+		cout << "\n";
+		inFile.close();
+		int tmp = oplata;
+		oplata = 0;
+		return tmp;
+	}
+	cout << "Кошик пустий\n";
+	return 0;
 }
 
 int ShoppingCart::amountCheck()

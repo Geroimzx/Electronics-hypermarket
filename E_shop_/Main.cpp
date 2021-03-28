@@ -125,7 +125,7 @@ int main()
 				case 1:
 					check1:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount)) {
+					if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount) && !smartphone.updateProductList(id, amount)) {
 						int tmp;	
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1696,7 +1696,10 @@ int main()
 			switch (tmp)
 			{
 			case 1:
-				//shoppingCart.pay();
+				cout << "-------------------------------------" << endl;
+				cout << "Загальна сума до оплати: " << shoppingCart.pay() << endl;
+				cout << "Ви успішно оформили замовлення" << endl;
+				shoppingCart.clearShoppingCart();
 				break;
 			case 2:
 				cout << "Введіть номер товару в корзині, який ви хочете видалити:" << endl;
@@ -1705,6 +1708,7 @@ int main()
 					system("cls");
 					shoppingCart.deleteProduct(tmp);
 					cout << "Товар виделено з корзини" << endl;
+					cout << "Загальна сума до оплати: " << shoppingCart.pay();
 					goto cart;
 				}
 				cout << "Номер товару введено неправильно" << endl;
@@ -1712,7 +1716,7 @@ int main()
 			case 3:
 				system("cls");
 				shoppingCart.clearShoppingCart();
-				cout << "Всі товари виделено з корзини" << endl;
+				cout << "Всі товари видалено з корзини" << endl;
 				goto cart;
 				break;
 			case 4:
