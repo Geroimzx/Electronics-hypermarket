@@ -146,7 +146,7 @@ int ShoppingCart::pay()
 		for (int i = 0; i < amount; i++)
 		{
 			products[i].initProduct(inFile);
-			oplata += products[i].getPrice();
+			oplata += products[i].getPrice() * products[i].getAvailable();
 		}
 		cout << "\n";
 		inFile.close();
