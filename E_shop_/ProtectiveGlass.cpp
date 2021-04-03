@@ -31,15 +31,15 @@ int ProtectiveGlass::listSizeCheck()
 
 void ProtectiveGlass::viewProducts(string filePath)
 {
-	int scale = 20;
+	int scale = 16;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Сумісність" << "|";
-	cout << setw(scale) << "Тип покриття" << "|";
+	cout << setw(25) << "Наявність" << "|";
+	cout << setw(20) << "Ціна" << "|";
+	cout << setw(21) << "Бренд" << "|";
+	cout << setw(14) << "Тип" << "|";
+	cout << setw(26) << "Сумісність" << "|";
+	cout << setw(24) << "Тип покриття" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -65,7 +65,7 @@ void ProtectiveGlass::viewProducts(string filePath)
 			cout << protectiveGlassList[i].getType() << "|";
 			cout.width(scale);
 			cout << protectiveGlassList[i].getCompatible() << "|";
-			cout.width(scale);
+			cout.width(22);
 			cout << protectiveGlassList[i].getCoatingType() << "|";
 		}
 		cout << "\n";

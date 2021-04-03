@@ -26,13 +26,13 @@ int BluetoothHeadset::listSizeCheck()
 
 void BluetoothHeadset::viewProducts(string filePath)
 {
-	int scale = 17;
+	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(13) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(21) << "Бренд" << "|";
+	cout << setw(14) << "Тип" << "|";
 	cout << setw(scale) << "Версія Bluetooth" << "|";
 	if (listSizeCheck() > 0)
 	{
@@ -53,11 +53,11 @@ void BluetoothHeadset::viewProducts(string filePath)
 			cout << bluetoothHeadsetList[i].getAvailable() << "|";
 			cout.width(scale);
 			cout << bluetoothHeadsetList[i].getPrice() << "|";
-			cout.width(scale);
+			cout.width(16);
 			cout << bluetoothHeadsetList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << bluetoothHeadsetList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(16);
 			cout << bluetoothHeadsetList[i].getBluetoothVersion() << "|";
 		}
 		cout << "\n";

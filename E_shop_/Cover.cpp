@@ -34,12 +34,12 @@ void Cover::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(8) << "Тип" << "|";
 	cout << setw(scale) << "Сумісність" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(scale) << "Колір";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -66,7 +66,7 @@ void Cover::viewProducts(string filePath)
 			cout.width(scale);
 			cout << сoverList[i].getCompatible() << "|";
 			cout.width(scale);
-			cout << сoverList[i].getColor() << "|";
+			cout << сoverList[i].getColor();
 		}
 		cout << "\n";
 		inFile.close();

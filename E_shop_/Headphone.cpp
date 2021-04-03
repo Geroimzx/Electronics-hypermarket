@@ -39,12 +39,12 @@ void Headphone::viewProducts(string filePath)
 	int scale = 15;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Роз'єм" << "|";
-	cout << setw(scale) << "Шумозаглушення" << "|";
+	cout << setw(24) << "Наявність" << "|";
+	cout << setw(19) << "Ціна" << "|";
+	cout << setw(20) << "Бренд" << "|";
+	cout << setw(16) << "Тип" << "|";
+	cout << setw(16) << "Роз'єм" << "|";
+	cout << setw(27) << "  Шумозаглушення" << "|";
 	cout << setw(scale) << "Колір" << "|";
 	if (listSizeCheck() > 0)
 	{
@@ -67,11 +67,11 @@ void Headphone::viewProducts(string filePath)
 			cout << headphoneList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << headphoneList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(24);
 			cout << headphoneList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(18);
 			cout << headphoneList[i].getConnectorType() << "|";
-			cout.width(scale);
+			cout.width(21);
 			cout << headphoneList[i].getNoiseReduction() << "|";
 			cout.width(scale);
 			cout << headphoneList[i].getColor() << "|";

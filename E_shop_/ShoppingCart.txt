@@ -1,6 +1,0 @@
-
-10        1         9999      Test      Телефон
-8         1         299       Tecno     Телефон
-1         12        25        lifecell  SIM       
-1         2         25        lifecell  SIM-карта
-1         1         25        lifecell  SIM-карта

@@ -93,7 +93,7 @@ int main()
 	int pidmenu;
 	int id, amount;
 	cout << "-------------------------------------" << endl;
-	cout << "Гіпермаркет електроніки \"No Name\"" << endl;
+	cout << "Гіпермаркет електроніки \"Silex\"" << endl;
 	cout << "-------------------------------------" << endl;
 
 	while (true)

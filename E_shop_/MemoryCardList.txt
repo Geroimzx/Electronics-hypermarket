@@ -1,1 +1,5 @@
-1 9 9999 Test Карта-пам'яті 256 Class-10
+1 100 129 Kingston microSD 16 Class10
+2 100 299 Samsung microSD 64 Class10
+3 100 555 Samsung microSD 128 UHS-I
+4 100 1299 Samsung microSD 256 UHS-I
+5 100 82 Netac microSD 8 Class-10

@@ -4,4 +4,4 @@
 4 45 9999 OPPO Смартфон 128 8 HelioP95 Android11 6.43 Amoled 48 32 Фіолет. 4310 Роз.обл.
 5 51 21999 Apple Смартфон 64 4 A13Bionic AppleiOS 6.1 Retina 12 12 Чорний 3110 eSIM
 6 92 2899 Xiaomi Смартфон 32 2 HelioG25 Android10 6.53 IPS 13 5 Чорний 5000 Роз.обл.
-7 37 4999 Nokia Смартфон 64 4 Snapdragon662 Android10 6.39 IPS 48 16 Чорний 4000 LTE
+7 36 4999 Nokia Смартфон 64 4 Snapdragon662 Android10 6.39 IPS 48 16 Чорний 4000 LTE

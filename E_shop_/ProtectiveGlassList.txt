@@ -1,1 +1,6 @@
-1 9 9999 Test Захисна-поверхня iPhone12 Скло
+1 100 399 MakeFuture3D Загарт.скло iPhone11 Олеофобне
+2 100 249 MakeFuture Загарт.скло GalaxyA31 Олеофобне
+3 100 249 MakeFuture Загарт.скло GalaxyA71 Олеофобне
+4 100 249 MakeFuture Загарт.скло Note9PRO Олеофобне
+5 100 249 Global Загарт.скло GalaxyA31 Олеофобне
+6 100 29 Proda Загарт.скло Note10 Олеофобне

@@ -1,1 +1,3 @@
-1 7 9999 Test Чохол iPhone12 Жовтий
+1 100 199 Huawei Чохол PSmart2021 Прозорий
+2 100 349 Huawei Чохол CalaxyA31 Чорний
+3 100 199 MakeFuture Чохол iPhone11 Прозорий

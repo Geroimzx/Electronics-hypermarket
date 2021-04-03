@@ -31,13 +31,13 @@ int PortableSpeakers::listSizeCheck()
 
 void PortableSpeakers::viewProducts(string filePath)
 {
-	int scale = 15;
+	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(15) << "Тип" << "|";
 	cout << setw(scale) << "Потужність" << "|";
 	cout << setw(scale) << "Час роботи" << "|";
 	if (listSizeCheck() > 0)
@@ -61,7 +61,7 @@ void PortableSpeakers::viewProducts(string filePath)
 			cout << portableSpeakersList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << portableSpeakersList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(16);
 			cout << portableSpeakersList[i].getType() << "|";
 			cout.width(scale);
 			cout << portableSpeakersList[i].getOutputPower() << "|";

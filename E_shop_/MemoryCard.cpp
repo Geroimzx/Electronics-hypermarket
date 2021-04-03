@@ -34,12 +34,12 @@ void MemoryCard::viewProducts(string filePath)
 	int scale = 14;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Об'єм" << "|";
-	cout << setw(scale) << "Клас" << "|";
+	cout << setw(23) << "Наявність" << "|";
+	cout << setw(18) << "Ціна" << "|";
+	cout << setw(19) << "Бренд" << "|";
+	cout << setw(17) << "Тип" << "|";
+	cout << setw(18) << "Об'єм" << "|";
+	cout << setw(18) << "Клас" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
