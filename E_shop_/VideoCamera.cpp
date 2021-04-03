@@ -35,7 +35,7 @@ void VideoCamera::viewProducts(string filePath)
 	cout << setw(scale) << "Сенсорний кран" << "|";
 	cout << setw(scale) << "Аудіосистема" << "|";
 	cout << setw(scale) << "Ємність акумулятора" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(scale) << " Колір" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
