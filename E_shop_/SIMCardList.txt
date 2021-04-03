@@ -1,1 +1,5 @@
-1 6 9999 Test ัณ์ าเ๊
+1 618 25 lifecell SIM-карта Ні
+2 1000 100 Vodafone SIM-карта Ні
+3 400 100 Kyivstar SIM-карта Ні
+4 300 150 lifecell SIM-карта Так
+5 400 100 Kyivstar SIM-карта Так

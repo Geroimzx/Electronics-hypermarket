@@ -14,7 +14,7 @@ int Telephone::listSizeCheck()
 		base.getline(new char[1024], 1024, '\n');
 		i++;
 	}
-	this->listSize = i - 1;//підрахунок товарів в корзині
+	this->listSize = i - 1;//підрахунок товарів
 	base.close();
 	return i;
 }
@@ -24,10 +24,10 @@ void Telephone::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(scale) << "      Ціна" << "|";
+	cout << setw(scale) << "     Бренд" << "|";
+	cout << setw(scale) << "   Тип" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;

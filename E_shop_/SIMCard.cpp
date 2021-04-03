@@ -29,11 +29,11 @@ void SIMCard::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
+	cout << setw(scale) << " Наявність" << "|";
 	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "VIP номер" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(12) << "Тип" << "|";
+	cout << setw(4) << "VIP";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -51,14 +51,14 @@ void SIMCard::viewProducts(string filePath)
 			cout << simCardList[i].getID() << "|";
 			cout.width(scale);
 			cout << simCardList[i].getAvailable() << "|";
-			cout.width(scale);
+			cout.width(6);
 			cout << simCardList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << simCardList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << simCardList[i].getType() << "|";
-			cout.width(scale);
-			cout << simCardList[i].getVipNumber() << "|";
+			cout.width(4);
+			cout << simCardList[i].getVipNumber();
 		}
 		cout << "\n";
 		inFile.close();

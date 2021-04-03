@@ -1,3 +1,4 @@
+#define _WIN32_WINNT 0x0502
 #include <iostream>
 #include <Windows.h>
 #include <stdlib.h>
@@ -39,6 +40,9 @@
 using namespace std;
 int main()
 {
+	HWND hwnd = GetConsoleWindow();
+	if (hwnd != NULL) { SetWindowPos(hwnd, 0, 0, 0, 1800, 1000, SWP_SHOWWINDOW | SWP_NOMOVE); }//зміна розміру вікна
+
 	SetConsoleCP(CP_UTF8);
 	SetConsoleOutputCP(CP_UTF8);//відображення мови в консолі
 	ShoppingCart shoppingCart;

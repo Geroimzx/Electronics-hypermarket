@@ -361,9 +361,6 @@
     <Text Include="MultimediasList.txt">
       <Filter>Resource Files\TVsAndMultimedia</Filter>
     </Text>
-    <Text Include="ProjectorsList.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="TVAccessoriesList.txt">
       <Filter>Resource Files\TVsAndMultimedia</Filter>
     </Text>
@@ -387,6 +384,9 @@
     </Text>
     <Text Include="VideoCamerasList.txt">
       <Filter>Resource Files\PhotosAndVideos</Filter>
+    </Text>
+    <Text Include="ProjectorsList.txt">
+      <Filter>Resource Files\TVsAndMultimedia</Filter>
     </Text>
   </ItemGroup>
 </Project>
