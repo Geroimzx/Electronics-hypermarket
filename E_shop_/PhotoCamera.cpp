@@ -24,15 +24,15 @@ void PhotoCamera::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Роздільна здатність" << "|";
+	cout << setw(12) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(13) << "Тип" << "|";
+	cout << setw(20) << "Роздільна здатність" << "|";
 	cout << setw(scale) << "Розмір матриці" << "|";
 	cout << setw(scale) << "Оптичний зум" << "|";
 	cout << setw(scale) << "Тип живлення" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(14) << "Колір";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -57,16 +57,16 @@ void PhotoCamera::viewProducts(string filePath)
 			cout.width(scale);
 			cout << photoCameraList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(19);
 			cout << photoCameraList[i].resolution << "|";
-			cout.width(scale);
+			cout.width(14);
 			cout << photoCameraList[i].sizeMatrix << "|";
-			cout.width(scale);
+			cout.width(12);
 			cout << photoCameraList[i].opticZoom << "|";
-			cout.width(scale);
+			cout.width(12);
 			cout << photoCameraList[i].powerType << "|";
-			cout.width(scale);
-			cout << photoCameraList[i].color << "|";
+			cout.width(15);
+			cout << photoCameraList[i].color;
 		}
 		cout << "\n";
 		inFile.close();
