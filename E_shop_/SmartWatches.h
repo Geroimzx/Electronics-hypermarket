@@ -14,7 +14,7 @@ private:
 	string displayForm;
 	string displaySize;
 	string material;
-	int workTime;
+	string workTime;
 
 	SmartWatches* smartWatchesList;
 	int listSize;

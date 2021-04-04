@@ -24,14 +24,14 @@ void Printer3D::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Камера" << "|";
-	cout << setw(scale) << "Час польоту" << "|";
-	cout << setw(scale) << "Максимальна відстань польоту" << "|";
-	cout << setw(scale) << "Частота" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(16) << "Бренд" << "|";
+	cout << setw(13) << "Тип" << "|";
+	cout << setw(scale) << "Технологія друку" << "|";
+	cout << setw(scale) << "Матеріал нитки" << "|";
+	cout << setw(scale) << "Кількість сопел" << "|";
+	cout << setw(scale) << "Макс. шв. друку" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -55,13 +55,13 @@ void Printer3D::viewProducts(string filePath)
 			cout << printer3DList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << printer3DList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(16);
 			cout << printer3DList[i].technology << "|";
-			cout.width(scale);
+			cout.width(14);
 			cout << printer3DList[i].material << "|";
-			cout.width(scale);
+			cout.width(15);
 			cout << printer3DList[i].nozzlesCount << "|";
-			cout.width(scale);
+			cout.width(15);
 			cout << printer3DList[i].maxSpeed << "|";
 		}
 		cout << "\n";

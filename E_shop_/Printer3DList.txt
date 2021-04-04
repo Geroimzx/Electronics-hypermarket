@@ -1,0 +1,2 @@
+1 100 11455 XYZPrinting 3D-принтер FFF PLA 1 60
+2 100 8699 XYZPrinting 3D-принтер FFF PLA 1 60

@@ -24,10 +24,10 @@ void Quadrocopter::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(15) << "Тип" << "|";
 	cout << setw(scale) << "Камера" << "|";
 	cout << setw(scale) << "Час польоту" << "|";
 	cout << setw(scale) << "Максимальна відстань польоту" << "|";
@@ -55,13 +55,13 @@ void Quadrocopter::viewProducts(string filePath)
 			cout << quadrocopterList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << quadrocopterList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << quadrocopterList[i].camera << "|";
-			cout.width(scale);
+			cout.width(11);
 			cout << quadrocopterList[i].flyTime << "|";
-			cout.width(scale);
+			cout.width(28);
 			cout << quadrocopterList[i].maxDistance << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << quadrocopterList[i].frequency << "|";
 		}
 		cout << "\n";
