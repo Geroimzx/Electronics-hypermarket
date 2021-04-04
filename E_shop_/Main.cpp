@@ -659,7 +659,7 @@ int main()
 							cout << "-------------------------------------" << endl;
 						}
 					}
-					else if (laptop.updateProductList(id, amount)) {
+					else if (printer.updateProductList(id, amount)) {
 						shoppingCart.addProduct(printer.getPrinterByID(id), amount);
 						system("cls");
 						cout << "Товар додано в корзину" << endl;
@@ -706,7 +706,7 @@ int main()
 							cout << "-------------------------------------" << endl;
 						}
 					}
-					else if (laptop.updateProductList(id, amount)) {
+					else if (router.updateProductList(id, amount)) {
 						shoppingCart.addProduct(router.getRouterByID(id), amount);
 						system("cls");
 						cout << "Товар додано в корзину" << endl;

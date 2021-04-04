@@ -24,11 +24,11 @@ void Printer::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
 	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Технологія друку" << "|";
+	cout << setw(32) << "Технологія друку" << "|";
 	cout << setw(scale) << "Формат паперу" << "|";
 	cout << setw(scale) << "Колір друку" << "|";
 	if (listSizeCheck() > 0)
@@ -54,11 +54,11 @@ void Printer::viewProducts(string filePath)
 			cout << printerList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << printerList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(24);
 			cout << printerList[i].printingTechnology << "|";
-			cout.width(scale);
+			cout.width(13);
 			cout << printerList[i].paperFormat << "|";
-			cout.width(scale);
+			cout.width(21);
 			cout << printerList[i].printingColor << "|";
 		}
 		cout << "\n";
@@ -100,6 +100,7 @@ bool Printer::updateProductList(int id, int amount)
 			outFile << printerList[i].price << ' ';
 			outFile << printerList[i].brand << ' ';
 			outFile << printerList[i].type << ' ';
+
 			outFile << printerList[i].printingTechnology << ' ';
 			outFile << printerList[i].paperFormat << ' ';
 			outFile << printerList[i].printingColor << '\n';

@@ -1,0 +1,4 @@
+1 100 13999 Acer Ноутбук 14 LCD FullHD CoreI31005G1 2 8 UHDGraphics 512 UEFI Сріблястий 1.7
+2 100 11999 Asus Ноутбук 15.6 TN FullHD A9-9425 2 8 RadeonR5 256 FreeDOS Сірий 1.9
+3 100 9799 Lenovo Ноутбук 14 LCD FullHD Athlon3150U 2 4 RadeonGraphics 1028 FreeDOS Сірий 1.6
+4 100 25999 Acer Ноутбук 15.6 IPS FullHD CoreI31005G1 6 16 RTX2060 512 UEFI Сріблястий 2.4

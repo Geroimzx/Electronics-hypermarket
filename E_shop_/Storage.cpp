@@ -24,13 +24,13 @@ void Storage::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Ємність" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(13) << "Тип" << "|";
+	cout << setw(17) << "Ємність" << "|";
 	cout << setw(scale) << "Форм-фактор" << "|";
-	cout << setw(scale) << "Інтерфейс" << "|";
+	cout << setw(19) << "Інтерфейс" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -57,7 +57,7 @@ void Storage::viewProducts(string filePath)
 
 			cout.width(scale);
 			cout << storageList[i].memoryCapacity << "|";
-			cout.width(scale);
+			cout.width(11);
 			cout << storageList[i].formFactor << "|";
 			cout.width(scale);
 			cout << storageList[i].connectionInterface << "|";

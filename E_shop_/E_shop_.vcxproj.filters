@@ -388,5 +388,8 @@
     <Text Include="ProjectorsList.txt">
       <Filter>Resource Files\TVsAndMultimedia</Filter>
     </Text>
+    <Text Include="DDRsList.txt">
+      <Filter>Resource Files\LaptopsAndComputers</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -24,10 +24,10 @@ void PowerSupplies::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(15) << "Тип" << "|";
 	cout << setw(scale) << "Форм-фактор" << "|";
 	cout << setw(scale) << "Потужність" << "|";
 	if (listSizeCheck() > 0)
@@ -51,10 +51,10 @@ void PowerSupplies::viewProducts(string filePath)
 			cout << powerSuppliesList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << powerSuppliesList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(18);
 			cout << powerSuppliesList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(11);
 			cout << powerSuppliesList[i].formFactor << "|";
 			cout.width(scale);
 			cout << powerSuppliesList[i].outPower << "|";

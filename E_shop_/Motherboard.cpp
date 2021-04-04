@@ -24,10 +24,10 @@ void Motherboard::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(13) << "Тип" << "|";
 	cout << setw(scale) << "Сокет" << "|";
 	cout << setw(scale) << "Тип ОЗУ" << "|";
 	cout << setw(scale) << "Форм-фактор" << "|";
@@ -52,14 +52,14 @@ void Motherboard::viewProducts(string filePath)
 			cout << motherboardList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << motherboardList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(18);
 			cout << motherboardList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(5);
 			cout << motherboardList[i].socket << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << motherboardList[i].RAMType << "|";
-			cout.width(scale);
+			cout.width(11);
 			cout << motherboardList[i].formFactor << "|";
 		}
 		cout << "\n";

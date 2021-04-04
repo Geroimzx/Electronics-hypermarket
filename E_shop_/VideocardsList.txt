@@ -1,0 +1,4 @@
+1 100 93999 MSI Відеокарта Nvidia RTX3080 10 GDDR6X
+2 100 39999 MSI Відеокарта Nvidia RTX3060 12 GDDR6
+3 100 39999 Asus Відеокарта Nvidia RTX3060 12 GDDR6
+4 100 47999 Gigabyte Відеокарта AMD RX6700XT 12 GDDR6

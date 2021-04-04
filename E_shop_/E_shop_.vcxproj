@@ -215,6 +215,7 @@
     <Text Include="AccessoriesList.txt" />
     <Text Include="BluetoothHeadsetList.txt" />
     <Text Include="CoverList.txt" />
+    <Text Include="DDRsList.txt" />
     <Text Include="EBooksList.txt" />
     <Text Include="HeadphoneList.txt" />
     <Text Include="LaptopsList.txt" />

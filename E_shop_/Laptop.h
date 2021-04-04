@@ -20,7 +20,7 @@ private:
 	int storageMemory;
 	string operatingSystem;
 	string color;
-	int weight;
+	string weight;
 
 	Laptop* laptopList;
 	int listSize;

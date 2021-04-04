@@ -21,15 +21,15 @@ int Processor::listSizeCheck()
 
 void Processor::viewProducts(string filePath)
 {
-	int scale = 10;
+	const int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
-	cout << setw(scale) << "Серія" << "|";
-	cout << setw(scale) << "Сокет" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(11) << "Тип" << "|";
+	cout << setw(20) << "Серія" << "|";
+	cout << setw(15) << "Сокет" << "|";
 	cout << setw(scale) << "Ядра" << "|";
 	cout << setw(scale) << "Частота" << "|";
 	if (listSizeCheck() > 0)
@@ -53,16 +53,16 @@ void Processor::viewProducts(string filePath)
 			cout << processorList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << processorList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(16);
 			cout << processorList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(15);
 			cout << processorList[i].chipSerie << "|";
 			cout.width(scale);
 			cout << processorList[i].socket << "|";
-			cout.width(scale);
+			cout.width(6);
 			cout << processorList[i].coresCount << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << processorList[i].frequency << "|";
 		}
 		cout << "\n";

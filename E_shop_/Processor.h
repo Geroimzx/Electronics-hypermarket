@@ -13,7 +13,7 @@ private:
 	string chipSerie;
 	string socket;
 	int coresCount;
-	int frequency;
+	float frequency;
 
 	Processor* processorList;
 	int listSize;

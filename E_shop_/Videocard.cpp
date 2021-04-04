@@ -24,12 +24,12 @@ void Videocard::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(13) << "Тип" << "|";
 	cout << setw(scale) << "Виробник чипа" << "|";
-	cout << setw(scale) << "Серія" << "|";
+	cout << setw(15) << "Серія" << "|";
 	cout << setw(scale) << "Об. пам'яті" << "|";
 	cout << setw(scale) << "Тип пам'яті" << "|";
 	if (listSizeCheck() > 0)
@@ -53,16 +53,16 @@ void Videocard::viewProducts(string filePath)
 			cout << videocardList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << videocardList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << videocardList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(13);
 			cout << videocardList[i].chipmaker << "|";
 			cout.width(scale);
 			cout << videocardList[i].chipSerie << "|";
-			cout.width(scale);
+			cout.width(11);
 			cout << videocardList[i].videoMemory << "|";
-			cout.width(scale);
+			cout.width(11);
 			cout << videocardList[i].memoryType << "|";
 		}
 		cout << "\n";

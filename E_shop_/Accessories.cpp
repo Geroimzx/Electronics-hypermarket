@@ -24,10 +24,10 @@ void Accessories::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(19) << "Бренд" << "|";
+	cout << setw(scale) << "Тип";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -47,10 +47,10 @@ void Accessories::viewProducts(string filePath)
 			cout << accessoriesList[i].getAvailable() << "|";
 			cout.width(scale);
 			cout << accessoriesList[i].getPrice() << "|";
-			cout.width(scale);
+			cout.width(14);
 			cout << accessoriesList[i].getBrand() << "|";
-			cout.width(scale);
-			cout << accessoriesList[i].getType() << "|";
+			cout.width(15);
+			cout << accessoriesList[i].getType();
 		}
 		cout << "\n";
 		inFile.close();
@@ -86,7 +86,7 @@ bool Accessories::updateProductList(int id, int amount)
 			outFile << accessoriesList[i].available << ' ';
 			outFile << accessoriesList[i].price << ' ';
 			outFile << accessoriesList[i].brand << ' ';
-			outFile << accessoriesList[i].type << ' ';
+			outFile << accessoriesList[i].type << '\n';
 		}
 		outFile.close();
 		return true;

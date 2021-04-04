@@ -24,10 +24,10 @@ void Router::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(9) << "Тип" << "|";
 	cout << setw(scale) << "Призначення" << "|";
 	cout << setw(scale) << "Частота Wi-Fi" << "|";
 	cout << setw(scale) << "Макс. швидкість" << "|";
@@ -54,11 +54,11 @@ void Router::viewProducts(string filePath)
 			cout << routerList[i].getBrand() << "|";
 			cout.width(scale);
 			cout << routerList[i].getType() << "|";
-			cout.width(scale);
+			cout.width(19);
 			cout << routerList[i].appointment << "|";
-			cout.width(scale);
+			cout.width(13);
 			cout << routerList[i].frequency << "|";
-			cout.width(scale);
+			cout.width(15);
 			cout << routerList[i].maxSpeed << "|";
 		}
 		cout << "\n";

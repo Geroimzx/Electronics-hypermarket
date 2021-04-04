@@ -24,13 +24,14 @@ void DDR::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
 	cout << setw(scale) << "Тип" << "|";
 	cout << setw(scale) << "Кількість модулів" << "|";
 	cout << setw(scale) << "Ємність" << "|";
-	cout << setw(scale) << "Форм-фактор" << "|";
+	cout << setw(scale) << "Частота" << "|";
+	cout << setw(scale) << "Таймінги" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -52,16 +53,16 @@ void DDR::viewProducts(string filePath)
 			cout << ddrList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << ddrList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << ddrList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(17);
 			cout << ddrList[i].modulesCount << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << ddrList[i].memoryCapacity << "|";
-			cout.width(scale);
+			cout.width(7);
 			cout << ddrList[i].frequency << "|";
-			cout.width(scale);
+			cout.width(8);
 			cout << ddrList[i].timings << "|";
 		}
 		cout << "\n";

@@ -30,9 +30,9 @@ void Laptop::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
 	cout << setw(scale) << "Тип" << "|";
 	cout << setw(scale) << "Діагональ екрану" << "|";
 	cout << setw(scale) << "Тип матриці" << "|";
@@ -40,10 +40,10 @@ void Laptop::viewProducts(string filePath)
 	cout << setw(scale) << "Серія процесора" << "|";
 	cout << setw(scale) << "Кількість ядер" << "|";
 	cout << setw(scale) << "Об'єм ОЗУ" << "|";
-	cout << setw(scale) << "Відеокарта" << "|";
+	cout << setw(24) << "Відеокарта" << "|";
 	cout << setw(scale) << "Об'єм пам'яті" << "|";
 	cout << setw(scale) << "ОС" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(15) << "Колір" << "|";
 	cout << setw(scale) << "Вага" << "|";
 	for (int i = 0; i < listSize; i++)
 	{
@@ -59,28 +59,28 @@ void Laptop::viewProducts(string filePath)
 		cout << laptopList[i].brand << "|";
 		cout.width(scale);
 		cout << laptopList[i].type << "|";
-		cout.width(scale);
+		cout.width(16);
 		cout << laptopList[i].displaySize << "|";
-		cout.width(scale);
+		cout.width(11);
 		cout << laptopList[i].displayType << "|";
-		cout.width(scale);
+		cout.width(19);
 		cout << laptopList[i].resolution << "|";
-		cout.width(scale);
+		cout.width(15);
 		cout << laptopList[i].chipset << "|";
-		cout.width(scale);
+		cout.width(14);
 		cout << laptopList[i].coresCount << "|";
-		cout.width(scale);
+		cout.width(9);
 		cout << laptopList[i].RAM << "|";
-		cout.width(scale);
+		cout.width(14);
 		cout << laptopList[i].videocardSeries << "|";
-		cout.width(scale);
+		cout.width(13);
 		cout << laptopList[i].storageMemory << "|";
-		cout.width(scale);
+		cout.width(8);
 		cout << laptopList[i].operatingSystem << "|";
-		cout.width(scale);
+		cout.width(15);
 		cout << laptopList[i].color << "|";
-		cout.width(scale);
-		cout << laptopList[i].weight;
+		cout.width(6);
+		cout << laptopList[i].weight << "|";
 	}
 	cout << "\n";
 	file.close();

@@ -1,0 +1,3 @@
+1 100 1469 ASRock Мат.плата AM4 DDR4 Micro-ATX
+2 100 1769 Asus Мат.плата 1151 DDR4 Micro-ATX
+3 100 1539 MSI Мат.плата 1151 DDR4 Micro-ATX
