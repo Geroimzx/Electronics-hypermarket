@@ -129,8 +129,33 @@ int main()
 				case 1:
 					check1:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount) && !smartphone.updateProductList(id, amount)) {
-						int tmp;	
+					if (id > 0 && id < smartphone.listSizeCheck() && amount > 0)
+					{
+						if (!smartphone.getSmartphoneByID(id).isAvailable() && (smartphone.getSmartphoneByID(id).getAvailable() < amount) && !smartphone.updateProductList(id, amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check1;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (smartphone.updateProductList(id, amount)) {
+							shoppingCart.addProduct(smartphone.getSmartphoneByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
+						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
 						if (tmp == 1) {
@@ -141,12 +166,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if(smartphone.updateProductList(id, amount)){
-						shoppingCart.addProduct(smartphone.getSmartphoneByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -177,7 +196,32 @@ int main()
 				case 1:
 					check2:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!telephone.getTelephoneByID(id).isAvailable() && (telephone.getTelephoneByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < telephone.listSizeCheck() && amount > 0)
+					{
+						if (!telephone.getTelephoneByID(id).isAvailable() && (telephone.getTelephoneByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check2;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (telephone.updateProductList(id, amount)) {
+							shoppingCart.addProduct(telephone.getTelephoneByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -189,12 +233,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (telephone.updateProductList(id, amount)) {
-						shoppingCart.addProduct(telephone.getTelephoneByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -240,7 +278,32 @@ int main()
 					case 1:
 					check3:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!cover.getCoverByID(id).isAvailable() && (cover.getCoverByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < cover.listSizeCheck() && amount > 0)
+						{
+							if (!cover.getCoverByID(id).isAvailable() && (cover.getCoverByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check3;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (cover.updateProductList(id, amount)) {
+								shoppingCart.addProduct(cover.getCoverByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -252,12 +315,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (cover.updateProductList(id, amount)) {
-							shoppingCart.addProduct(cover.getCoverByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -288,7 +345,32 @@ int main()
 					case 1:
 					check4:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!headphone.getHeadphoneByID(id).isAvailable() && (headphone.getHeadphoneByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < headphone.listSizeCheck() && amount > 0)
+						{
+							if (!headphone.getHeadphoneByID(id).isAvailable() && (headphone.getHeadphoneByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check4;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (headphone.updateProductList(id, amount)) {
+								shoppingCart.addProduct(headphone.getHeadphoneByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -300,12 +382,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (headphone.updateProductList(id, amount)) {
-							shoppingCart.addProduct(headphone.getHeadphoneByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -336,7 +412,32 @@ int main()
 					case 1:
 					check5:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!portableSpeakers.getPortableSpeakersByID(id).isAvailable() && (portableSpeakers.getPortableSpeakersByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < portableSpeakers.listSizeCheck() && amount > 0)
+						{
+							if (!portableSpeakers.getPortableSpeakersByID(id).isAvailable() && (portableSpeakers.getPortableSpeakersByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check5;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (portableSpeakers.updateProductList(id, amount)) {
+								shoppingCart.addProduct(portableSpeakers.getPortableSpeakersByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -348,12 +449,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (portableSpeakers.updateProductList(id, amount)) {
-							shoppingCart.addProduct(portableSpeakers.getPortableSpeakersByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -384,7 +479,32 @@ int main()
 					case 1:
 					check6:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!bluetoothHeadset.getBluetoothHeadsetByID(id).isAvailable() && (bluetoothHeadset.getBluetoothHeadsetByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < bluetoothHeadset.listSizeCheck() && amount > 0)
+						{
+							if (!bluetoothHeadset.getBluetoothHeadsetByID(id).isAvailable() && (bluetoothHeadset.getBluetoothHeadsetByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check6;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (bluetoothHeadset.updateProductList(id, amount)) {
+								shoppingCart.addProduct(bluetoothHeadset.getBluetoothHeadsetByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -396,12 +516,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (bluetoothHeadset.updateProductList(id, amount)) {
-							shoppingCart.addProduct(bluetoothHeadset.getBluetoothHeadsetByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -432,7 +546,32 @@ int main()
 					case 1:
 					check7:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!memoryCard.getMemoryCardByID(id).isAvailable() && (memoryCard.getMemoryCardByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < memoryCard.listSizeCheck() && amount > 0)
+						{
+							if (!memoryCard.getMemoryCardByID(id).isAvailable() && (memoryCard.getMemoryCardByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check7;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (memoryCard.updateProductList(id, amount)) {
+								shoppingCart.addProduct(memoryCard.getMemoryCardByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -444,12 +583,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (memoryCard.updateProductList(id, amount)) {
-							shoppingCart.addProduct(memoryCard.getMemoryCardByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -480,7 +613,32 @@ int main()
 					case 1:
 					check8:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!protectiveGlass.getProtectiveGlassByID(id).isAvailable() && (protectiveGlass.getProtectiveGlassByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < protectiveGlass.listSizeCheck() && amount > 0)
+						{
+							if (!protectiveGlass.getProtectiveGlassByID(id).isAvailable() && (protectiveGlass.getProtectiveGlassByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check8;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (protectiveGlass.updateProductList(id, amount)) {
+								shoppingCart.addProduct(protectiveGlass.getProtectiveGlassByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -492,12 +650,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (protectiveGlass.updateProductList(id, amount)) {
-							shoppingCart.addProduct(protectiveGlass.getProtectiveGlassByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -535,7 +687,32 @@ int main()
 				case 1:
 				check9:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!simCard.getSIMCardByID(id).isAvailable() && (simCard.getSIMCardByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < simCard.listSizeCheck() && amount > 0)
+					{
+						if (!simCard.getSIMCardByID(id).isAvailable() && (simCard.getSIMCardByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check9;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (simCard.updateProductList(id, amount)) {
+							shoppingCart.addProduct(simCard.getSIMCardByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -547,12 +724,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (simCard.updateProductList(id, amount)) {
-						shoppingCart.addProduct(simCard.getSIMCardByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -605,7 +776,32 @@ int main()
 				case 1:
 				check10:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!laptop.getLaptopByID(id).isAvailable() && (laptop.getLaptopByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < laptop.listSizeCheck() && amount > 0)
+					{
+						if (!laptop.getLaptopByID(id).isAvailable() && (laptop.getLaptopByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check10;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (laptop.updateProductList(id, amount)) {
+							shoppingCart.addProduct(laptop.getLaptopByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -617,12 +813,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (laptop.updateProductList(id, amount)) {
-						shoppingCart.addProduct(laptop.getLaptopByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -652,7 +842,32 @@ int main()
 				case 1:
 				check11:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!printer.getPrinterByID(id).isAvailable() && (printer.getPrinterByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < printer.listSizeCheck() && amount > 0)
+					{
+						if (!printer.getPrinterByID(id).isAvailable() && (printer.getPrinterByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check11;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (printer.updateProductList(id, amount)) {
+							shoppingCart.addProduct(printer.getPrinterByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -664,12 +879,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (printer.updateProductList(id, amount)) {
-						shoppingCart.addProduct(printer.getPrinterByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -699,7 +908,32 @@ int main()
 				case 1:
 				check12:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!router.getRouterByID(id).isAvailable() && (router.getRouterByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < router.listSizeCheck() && amount > 0)
+					{
+						if (!router.getRouterByID(id).isAvailable() && (router.getRouterByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check12;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (router.updateProductList(id, amount)) {
+							shoppingCart.addProduct(router.getRouterByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -711,12 +945,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (router.updateProductList(id, amount)) {
-						shoppingCart.addProduct(router.getRouterByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -762,7 +990,32 @@ int main()
 					case 1:
 					check13:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!videocard.getVideocardByID(id).isAvailable() && (videocard.getVideocardByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < videocard.listSizeCheck() && amount > 0)
+						{
+							if (!videocard.getVideocardByID(id).isAvailable() && (videocard.getVideocardByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check13;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (videocard.updateProductList(id, amount)) {
+								shoppingCart.addProduct(videocard.getVideocardByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -774,12 +1027,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (videocard.updateProductList(id, amount)) {
-							shoppingCart.addProduct(videocard.getVideocardByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -810,7 +1057,32 @@ int main()
 					case 1:
 					check14:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!processor.getProcessorByID(id).isAvailable() && (processor.getProcessorByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < processor.listSizeCheck() && amount > 0)
+						{
+							if (!processor.getProcessorByID(id).isAvailable() && (processor.getProcessorByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check14;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (processor.updateProductList(id, amount)) {
+								shoppingCart.addProduct(processor.getProcessorByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -822,12 +1094,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (processor.updateProductList(id, amount)) {
-							shoppingCart.addProduct(processor.getProcessorByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -858,7 +1124,32 @@ int main()
 					case 1:
 					check15:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!motherboard.getMotherboardByID(id).isAvailable() && (motherboard.getMotherboardByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < motherboard.listSizeCheck() && amount > 0)
+						{
+							if (!motherboard.getMotherboardByID(id).isAvailable() && (motherboard.getMotherboardByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check15;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (motherboard.updateProductList(id, amount)) {
+								shoppingCart.addProduct(motherboard.getMotherboardByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -870,12 +1161,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (motherboard.updateProductList(id, amount)) {
-							shoppingCart.addProduct(motherboard.getMotherboardByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -906,7 +1191,32 @@ int main()
 					case 1:
 					check16:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!ddr.getDDRByID(id).isAvailable() && (ddr.getDDRByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < ddr.listSizeCheck() && amount > 0)
+						{
+							if (!ddr.getDDRByID(id).isAvailable() && (ddr.getDDRByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check16;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (ddr.updateProductList(id, amount)) {
+								shoppingCart.addProduct(ddr.getDDRByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -918,12 +1228,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (ddr.updateProductList(id, amount)) {
-							shoppingCart.addProduct(ddr.getDDRByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -954,7 +1258,32 @@ int main()
 					case 1:
 					check17:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!storage.getStorageByID(id).isAvailable() && (storage.getStorageByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < storage.listSizeCheck() && amount > 0)
+						{
+							if (!storage.getStorageByID(id).isAvailable() && (storage.getStorageByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check17;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (storage.updateProductList(id, amount)) {
+								shoppingCart.addProduct(storage.getStorageByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -966,12 +1295,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (storage.updateProductList(id, amount)) {
-							shoppingCart.addProduct(storage.getStorageByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -1002,7 +1325,32 @@ int main()
 					case 1:
 					check18:
 						shoppingCart.initShoppingCartAdd(id, amount);
-						if (!powerSupplies.getPowerSuppliesByID(id).isAvailable() && (powerSupplies.getPowerSuppliesByID(id).getAvailable() < amount)) {
+						if (id > 0 && id < powerSupplies.listSizeCheck() && amount > 0)
+						{
+							if (!powerSupplies.getPowerSuppliesByID(id).isAvailable() && (powerSupplies.getPowerSuppliesByID(id).getAvailable() < amount)) {
+								int tmp;
+								cout << "1 - Купити інший товар\n2 - Вийти\n";
+								cin >> tmp;
+								if (tmp == 1) {
+									goto check18;
+								}
+								else if (tmp == 2) {
+									system("cls");
+									cout << "Вихід у головне меню" << endl;
+									cout << "-------------------------------------" << endl;
+								}
+							}
+							else if (powerSupplies.updateProductList(id, amount)) {
+								shoppingCart.addProduct(powerSupplies.getPowerSuppliesByID(id), amount);
+								system("cls");
+								cout << "Товар додано в корзину" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else {
+							system("cls");
+							cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+							cout << "-------------------------------------" << endl;
 							int tmp;
 							cout << "1 - Купити інший товар\n2 - Вийти\n";
 							cin >> tmp;
@@ -1014,12 +1362,6 @@ int main()
 								cout << "Вихід у головне меню" << endl;
 								cout << "-------------------------------------" << endl;
 							}
-						}
-						else if (powerSupplies.updateProductList(id, amount)) {
-							shoppingCart.addProduct(powerSupplies.getPowerSuppliesByID(id), amount);
-							system("cls");
-							cout << "Товар додано в корзину" << endl;
-							cout << "-------------------------------------" << endl;
 						}
 						break;
 					case 2:
@@ -1056,7 +1398,32 @@ int main()
 				case 1:
 				check19:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!accessories.getAccessoriesByID(id).isAvailable() && (accessories.getAccessoriesByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < accessories.listSizeCheck() && amount > 0)
+					{
+						if (!accessories.getAccessoriesByID(id).isAvailable() && (accessories.getAccessoriesByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check19;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (accessories.updateProductList(id, amount)) {
+							shoppingCart.addProduct(accessories.getAccessoriesByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1068,12 +1435,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (accessories.updateProductList(id, amount)) {
-						shoppingCart.addProduct(accessories.getAccessoriesByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1127,7 +1488,32 @@ int main()
 				case 1:
 				check20:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!television.getTVByID(id).isAvailable() && (television.getTVByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < television.listSizeCheck() && amount > 0)
+					{
+						if (!television.getTVByID(id).isAvailable() && (television.getTVByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check20;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (television.updateProductList(id, amount)) {
+							shoppingCart.addProduct(television.getTVByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1139,12 +1525,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (television.updateProductList(id, amount)) {
-						shoppingCart.addProduct(television.getTVByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1174,7 +1554,32 @@ int main()
 				case 1:
 				check21:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!multimedia.getMultimediaByID(id).isAvailable() && (multimedia.getMultimediaByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < multimedia.listSizeCheck() && amount > 0)
+					{
+						if (!multimedia.getMultimediaByID(id).isAvailable() && (multimedia.getMultimediaByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check21;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (multimedia.updateProductList(id, amount)) {
+							shoppingCart.addProduct(multimedia.getMultimediaByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1186,12 +1591,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (multimedia.updateProductList(id, amount)) {
-						shoppingCart.addProduct(multimedia.getMultimediaByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1221,7 +1620,32 @@ int main()
 				case 1:
 				check22:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!projector.getProjectorByID(id).isAvailable() && (projector.getProjectorByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < projector.listSizeCheck() && amount > 0)
+					{
+						if (!projector.getProjectorByID(id).isAvailable() && (projector.getProjectorByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check22;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (projector.updateProductList(id, amount)) {
+							shoppingCart.addProduct(projector.getProjectorByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1233,12 +1657,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (projector.updateProductList(id, amount)) {
-						shoppingCart.addProduct(projector.getProjectorByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1268,7 +1686,32 @@ int main()
 				case 1:
 				check23:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!tvAccessories.getTVAccessoriesByID(id).isAvailable() && (tvAccessories.getTVAccessoriesByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < tvAccessories.listSizeCheck() && amount > 0)
+					{
+						if (!tvAccessories.getTVAccessoriesByID(id).isAvailable() && (tvAccessories.getTVAccessoriesByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check23;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (tvAccessories.updateProductList(id, amount)) {
+							shoppingCart.addProduct(tvAccessories.getTVAccessoriesByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1280,12 +1723,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (tvAccessories.updateProductList(id, amount)) {
-						shoppingCart.addProduct(tvAccessories.getTVAccessoriesByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1336,7 +1773,32 @@ int main()
 				case 1:
 				check24:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!smartWatch.getSmartWatchesByID(id).isAvailable() && (smartWatch.getSmartWatchesByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < smartWatch.listSizeCheck() && amount > 0)
+					{
+						if (!smartWatch.getSmartWatchesByID(id).isAvailable() && (smartWatch.getSmartWatchesByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check24;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (smartWatch.updateProductList(id, amount)) {
+							shoppingCart.addProduct(smartWatch.getSmartWatchesByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1348,12 +1810,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (smartWatch.updateProductList(id, amount)) {
-						shoppingCart.addProduct(smartWatch.getSmartWatchesByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1383,7 +1839,32 @@ int main()
 				case 1:
 				check25:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!quadrocopter.getQuadrocopterByID(id).isAvailable() && (quadrocopter.getQuadrocopterByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < quadrocopter.listSizeCheck() && amount > 0)
+					{
+						if (!quadrocopter.getQuadrocopterByID(id).isAvailable() && (quadrocopter.getQuadrocopterByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check25;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (quadrocopter.updateProductList(id, amount)) {
+							shoppingCart.addProduct(quadrocopter.getQuadrocopterByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1395,12 +1876,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (quadrocopter.updateProductList(id, amount)) {
-						shoppingCart.addProduct(quadrocopter.getQuadrocopterByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1430,7 +1905,32 @@ int main()
 				case 1:
 				check26:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!printer3D.getPrinter3DByID(id).isAvailable() && (printer3D.getPrinter3DByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < printer3D.listSizeCheck() && amount > 0)
+					{
+						if (!printer3D.getPrinter3DByID(id).isAvailable() && (printer3D.getPrinter3DByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check26;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (printer3D.updateProductList(id, amount)) {
+							shoppingCart.addProduct(printer3D.getPrinter3DByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1442,12 +1942,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (printer3D.updateProductList(id, amount)) {
-						shoppingCart.addProduct(printer3D.getPrinter3DByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1496,7 +1990,32 @@ int main()
 				case 1:
 				check27:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!tablet.getTabletByID(id).isAvailable() && (tablet.getTabletByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < tablet.listSizeCheck() && amount > 0)
+					{
+						if (!tablet.getTabletByID(id).isAvailable() && (tablet.getTabletByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check27;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (tablet.updateProductList(id, amount)) {
+							shoppingCart.addProduct(tablet.getTabletByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1508,12 +2027,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (tablet.updateProductList(id, amount)) {
-						shoppingCart.addProduct(tablet.getTabletByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1543,7 +2056,32 @@ int main()
 				case 1:
 				check28:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!ebook.getEBookByID(id).isAvailable() && (ebook.getEBookByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < ebook.listSizeCheck() && amount > 0)
+					{
+						if (!ebook.getEBookByID(id).isAvailable() && (ebook.getEBookByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check28;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (ebook.updateProductList(id, amount)) {
+							shoppingCart.addProduct(ebook.getEBookByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1555,12 +2093,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (ebook.updateProductList(id, amount)) {
-						shoppingCart.addProduct(ebook.getEBookByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1609,7 +2141,32 @@ int main()
 				case 1:
 				check29:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!photoCamera.getPhotoCameraByID(id).isAvailable() && (photoCamera.getPhotoCameraByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < photoCamera.listSizeCheck() && amount > 0)
+					{
+						if (!photoCamera.getPhotoCameraByID(id).isAvailable() && (photoCamera.getPhotoCameraByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check29;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (photoCamera.updateProductList(id, amount)) {
+							shoppingCart.addProduct(photoCamera.getPhotoCameraByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1621,12 +2178,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (photoCamera.updateProductList(id, amount)) {
-						shoppingCart.addProduct(photoCamera.getPhotoCameraByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
@@ -1656,7 +2207,32 @@ int main()
 				case 1:
 				check30:
 					shoppingCart.initShoppingCartAdd(id, amount);
-					if (!videoCamera.getVideoCameraByID(id).isAvailable() && (videoCamera.getVideoCameraByID(id).getAvailable() < amount)) {
+					if (id > 0 && id < videoCamera.listSizeCheck() && amount > 0)
+					{
+						if (!videoCamera.getVideoCameraByID(id).isAvailable() && (videoCamera.getVideoCameraByID(id).getAvailable() < amount)) {
+							int tmp;
+							cout << "1 - Купити інший товар\n2 - Вийти\n";
+							cin >> tmp;
+							if (tmp == 1) {
+								goto check30;
+							}
+							else if (tmp == 2) {
+								system("cls");
+								cout << "Вихід у головне меню" << endl;
+								cout << "-------------------------------------" << endl;
+							}
+						}
+						else if (videoCamera.updateProductList(id, amount)) {
+							shoppingCart.addProduct(videoCamera.getVideoCameraByID(id), amount);
+							system("cls");
+							cout << "Товар додано в корзину" << endl;
+							cout << "-------------------------------------" << endl;
+						}
+					}
+					else {
+						system("cls");
+						cout << "ID або кількість товару введено неправильно, воно або менше 0 або більше за кількість товарів в категорії!!!" << endl;
+						cout << "-------------------------------------" << endl;
 						int tmp;
 						cout << "1 - Купити інший товар\n2 - Вийти\n";
 						cin >> tmp;
@@ -1668,12 +2244,6 @@ int main()
 							cout << "Вихід у головне меню" << endl;
 							cout << "-------------------------------------" << endl;
 						}
-					}
-					else if (videoCamera.updateProductList(id, amount)) {
-						shoppingCart.addProduct(videoCamera.getVideoCameraByID(id), amount);
-						system("cls");
-						cout << "Товар додано в корзину" << endl;
-						cout << "-------------------------------------" << endl;
 					}
 					break;
 				case 2:
