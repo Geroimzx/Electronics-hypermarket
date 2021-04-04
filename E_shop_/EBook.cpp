@@ -30,17 +30,17 @@ void EBook::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(scale) << " Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(11) << "Тип" << "|";
 	cout << setw(scale) << "ROM" << "|";
 	cout << setw(scale) << "RAM" << "|";
-	cout << setw(15) << "Формати" << "|";
-	cout << setw(scale) << "ОС" << "|";
+	cout << setw(19) << "Формати" << "|";
+	cout << setw(12) << "ОС" << "|";
 	cout << setw(scale) << "Діагональ екрану" << "|";
-	cout << setw(scale) << "Тип екрану" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(22) << "Тип екрану" << "|";
+	cout << setw(11) << "Колір" << "|";
 	cout << setw(scale) << "Ємність акумулятора" << "|";
 	for (int i = 0; i < listSize; i++)
 	{
@@ -66,7 +66,7 @@ void EBook::viewProducts(string filePath)
 		cout << ebookList[i].operatingSystem << "|";
 		cout.width(16);
 		cout << ebookList[i].displaySize << "|";
-		cout.width(scale);
+		cout.width(13);
 		cout << ebookList[i].displayType << "|";
 		cout.width(scale);
 		cout << ebookList[i].color << "|";
@@ -121,7 +121,7 @@ bool EBook::updateProductList(int id, int amount)
 			outFile << ebookList[i].displaySize << ' ';
 			outFile << ebookList[i].displayType << ' ';
 			outFile << ebookList[i].color << ' ';
-			outFile << ebookList[i].batteryCapacity << ' ';
+			outFile << ebookList[i].batteryCapacity << '\n';
 		}
 		outFile.close();
 		return true;

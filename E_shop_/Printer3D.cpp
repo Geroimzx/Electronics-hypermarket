@@ -53,7 +53,7 @@ void Printer3D::viewProducts(string filePath)
 			cout << printer3DList[i].getPrice() << "|";
 			cout.width(scale);
 			cout << printer3DList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(17);
 			cout << printer3DList[i].getType() << "|";
 			cout.width(16);
 			cout << printer3DList[i].technology << "|";

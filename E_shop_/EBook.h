@@ -10,14 +10,14 @@ class EBook :
     public Product
 {
 private:
-	int storageMemory;
-	int RAM;
+	string storageMemory;
+	string RAM;
 	string formatSupport;
 	string operatingSystem;
-	float displaySize;
+	string displaySize;
 	string displayType;
 	string color;
-	int batteryCapacity;
+	string batteryCapacity;
 
 	EBook* ebookList;
 	int listSize;

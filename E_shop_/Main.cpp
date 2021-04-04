@@ -1687,7 +1687,7 @@ int main()
 		case 7:
 			system("cls");
 		cart:
-			cout << "-------------------------------------" << endl;
+			cout << "\n-------------------------------------" << endl;
 			cout << "Корзина:" << endl;
 			shoppingCart.viewShoppingCart();
 			cout << "Виберіть дію:" << endl;

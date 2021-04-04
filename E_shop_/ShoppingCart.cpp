@@ -12,10 +12,10 @@ void ShoppingCart::viewShoppingCart()
 		cout << "|";
 		cout << setw(5) << "    №" << "|";
 		cout << setw(5) << "ID" << "|";
-		cout << setw(14) << " Кількість" << "|";
-		cout << setw(scale) << "      Ціна" << "|";
-		cout << setw(scale) << "     Бренд" << "|";
-		cout << setw(scale) << "Тип" << "|";
+		cout << setw(19) << "Кількість" << "|";
+		cout << setw(14) << "Ціна" << "|";
+		cout << setw(20) << "Бренд" << "|";
+		cout << setw(22) << "Тип";
 		products = new Product[amount];
 		for (int i = 0; i < amount; i++)
 		{
@@ -29,9 +29,9 @@ void ShoppingCart::viewShoppingCart()
 			cout << products[i].getAvailable() << "|";
 			cout.width(scale);
 			cout << products[i].getPrice() << "|";
-			cout.width(scale);
+			cout.width(15);
 			cout << products[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(26);
 			cout << products[i].getType();
 		}
 		cout << "\n";
@@ -62,17 +62,10 @@ void ShoppingCart::addProduct(Product product, int amount)
 	else {
 		int scale = 10;
 		outFile.setf(ios::left);
-		cout << "\n|";
-		outFile << '\n';
-		outFile.width(scale);
-		outFile << product.getID();
-		outFile.width(scale);
-		outFile << amount;
-		outFile.width(scale);
-		outFile << product.getPrice();
-		outFile.width(scale);
-		outFile << product.getBrand();
-		outFile.width(scale);
+		outFile << '\n' << product.getID() << ' ';
+		outFile << amount << ' ';
+		outFile << product.getPrice() << ' ';
+		outFile << product.getBrand() << ' ';
 		outFile << product.getType();
 		outFile.close();
 		amountCheck();
@@ -99,23 +92,16 @@ void ShoppingCart::deleteProduct(int number)
 			if (!outFile) {
 				cout << "Cannot open file\n" << endl;
 			}else {
-				int scale = 10;
 				outFile.setf(ios::left);
 				for (int i = 0; i < amount; i++)
 				{
 					if ((i + 1) != number)
 					{
-						outFile << '\n';
-						outFile.width(scale);
-						outFile << products[i].getID();
-						outFile.width(scale);
-						outFile << products[i].getAvailable();
-						outFile.width(scale);
-						outFile << products[i].getPrice();
-						outFile.width(scale);
-						outFile << products[i].getBrand();
-						outFile.width(scale);
-						outFile << products[i].getType();
+						outFile << products[i].getID() << ' ';
+						outFile << products[i].getAvailable() << ' ';
+						outFile << products[i].getPrice() << ' ';
+						outFile << products[i].getBrand() << ' ';
+						outFile << products[i].getType() << '\n';
 					}
 				}
 			}
