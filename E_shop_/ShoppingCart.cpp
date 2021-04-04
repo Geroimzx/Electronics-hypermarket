@@ -37,7 +37,7 @@ void ShoppingCart::viewShoppingCart()
 		cout << "\n";
 		inFile.close();
 		amountCheck();
-		cout << "Загальна сума до оплати: " << pay() << endl;
+		cout << "Загальна сума до оплати: " << checkOplata() << endl;
 	}
 	else {
 		cout << "Кошик пустий\n";
@@ -120,13 +120,40 @@ void ShoppingCart::clearShoppingCart()
 	oFile.close();
 }
 
+int ShoppingCart::checkOplata()
+{
+	if (amountCheck() > 0)
+	{
+		inFile.open("ShoppingCart.txt");
+		if (!inFile) {
+			cout << "Cannot open file" << endl;
+		}
+		else {
+			amountCheck();
+			products = new Product[amount];
+			for (int i = 0; i < amount; i++)
+			{
+				products[i].initProduct(inFile);
+				oplata += products[i].getPrice() * products[i].getAvailable();
+			}
+			cout << "\n";
+			inFile.close();
+		}
+		int tmp = oplata;
+		oplata = 0;
+		return tmp;
+	}
+	cout << "Кошик пустий\n";
+	return 0;
+}
+
 int ShoppingCart::pay()
 {
 	if (amountCheck() > 1)
 	{
 		inFile.open("ShoppingCart.txt");
 		fstream admFile;
-		admFile.open("ShoppingCartAdminList.txt");
+		admFile.open("ShoppingCartAdminList.txt", ios::app);
 		if (!inFile || !admFile) {
 			cout << "Cannot open file" << endl;
 		}
@@ -150,10 +177,12 @@ int ShoppingCart::pay()
 				admFile << products[i].getType() << '\n';
 				oplata += products[i].getPrice() * products[i].getAvailable();
 			}
+			admFile << "Загальна сума: " << oplata << '\n';
 			cout << "\n";
-			inFile.close();
-			admFile.close();
+
 		}
+		inFile.close();
+		admFile.close();
 		int tmp = oplata;
 		oplata = 0;
 		return tmp;

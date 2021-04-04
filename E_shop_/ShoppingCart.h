@@ -25,6 +25,7 @@ public:
 	void deleteProduct(int ID);
 	//очистити корзину
 	void clearShoppingCart();
+	int checkOplata();
 	//оплата товарів
 	int pay();
 

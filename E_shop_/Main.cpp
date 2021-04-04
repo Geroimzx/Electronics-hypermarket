@@ -225,6 +225,7 @@ int main()
 				cin >> tmp;
 				switch (tmp) {
 				case 1:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Чохли" << endl;
 					cover.viewProducts("CoverList.txt");
@@ -272,6 +273,7 @@ int main()
 					}
 					break;
 				case 2:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Навушники" << endl;
 					headphone.viewProducts("HeadphoneList.txt");
@@ -319,6 +321,7 @@ int main()
 					}
 					break;
 				case 3:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Портативні колонки" << endl;
 					portableSpeakers.viewProducts("PortableSpeakersList.txt");
@@ -366,6 +369,7 @@ int main()
 					}
 					break;
 				case 4:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Bluetooth-гарнітури" << endl;
 					bluetoothHeadset.viewProducts("BluetoothHeadsetList.txt");
@@ -413,6 +417,7 @@ int main()
 					}
 					break;
 				case 5:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Карти пам'яті" << endl;
 					memoryCard.viewProducts("MemoryCardList.txt");
@@ -460,6 +465,7 @@ int main()
 					}
 					break;
 				case 6:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Захисні плівки та скло" << endl;
 					protectiveGlass.viewProducts("ProtectiveGlassList.txt");
@@ -741,6 +747,7 @@ int main()
 				cin >> tmp;
 				switch (tmp) {
 				case 1:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Відеокарти" << endl;
 					videocard.viewProducts("VideocardsList.txt");
@@ -788,6 +795,7 @@ int main()
 					}
 					break;
 				case 2:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Процесори" << endl;
 					processor.viewProducts("ProcessorsList.txt");
@@ -835,6 +843,7 @@ int main()
 					}
 					break;
 				case 3:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Материнські плати" << endl;
 					motherboard.viewProducts("MotherboardsList.txt");
@@ -882,6 +891,7 @@ int main()
 					}
 					break;
 				case 4:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Пам'ять DDR" << endl;
 					ddr.viewProducts("DDRsList.txt");
@@ -929,6 +939,7 @@ int main()
 					}
 					break;
 				case 5:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "SSD і HDD накопичувачі" << endl;
 					storage.viewProducts("StoragesList.txt");
@@ -976,6 +987,7 @@ int main()
 					}
 					break;
 				case 6:
+					system("cls");
 					cout << "-------------------------------------" << endl;
 					cout << "Блоки живлення" << endl;
 					powerSupplies.viewProducts("PowerSuppliesList.txt");
@@ -1702,7 +1714,7 @@ int main()
 			case 1:
 				system("cls");
 				cout << "-------------------------------------" << endl;
-				cout << "Загальна сума до оплати: " << shoppingCart.pay() << endl;
+				cout << "Загальна сума до оплати: " << shoppingCart.checkOplata() << endl;
 				if (shoppingCart.pay() > 0) {
 					cout << "Ви успішно оформили замовлення" << endl;
 					shoppingCart.clearShoppingCart();
@@ -1715,7 +1727,7 @@ int main()
 					system("cls");
 					shoppingCart.deleteProduct(tmp);
 					cout << "Товар виделено з корзини" << endl;
-					cout << "Загальна сума до оплати: " << shoppingCart.pay();
+					cout << "Загальна сума до оплати: " << shoppingCart.checkOplata();
 					goto cart;
 				}
 				cout << "Номер товару введено неправильно" << endl;
