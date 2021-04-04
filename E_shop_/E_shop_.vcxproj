@@ -233,6 +233,7 @@
     <Text Include="QuadrocoptersList.txt" />
     <Text Include="RoutersList.txt" />
     <Text Include="ShoppingCart.txt" />
+    <Text Include="ShoppingCartAdminList.txt" />
     <Text Include="SIMCardList.txt" />
     <Text Include="SmartphonesList.txt" />
     <Text Include="SmartWatchesList.txt" />

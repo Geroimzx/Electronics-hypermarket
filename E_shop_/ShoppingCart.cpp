@@ -125,17 +125,35 @@ int ShoppingCart::pay()
 	if (amountCheck() > 1)
 	{
 		inFile.open("ShoppingCart.txt");
-		if (!inFile)
+		fstream admFile;
+		admFile.open("ShoppingCartAdminList.txt");
+		if (!inFile || !admFile) {
 			cout << "Cannot open file" << endl;
-		amountCheck();
-		products = new Product[amount];
-		for (int i = 0; i < amount; i++)
-		{
-			products[i].initProduct(inFile);
-			oplata += products[i].getPrice() * products[i].getAvailable();
 		}
-		cout << "\n";
-		inFile.close();
+		else {
+			// current date/time based on current system
+			time_t now = time(0);
+			// convert now to string form
+			char* _Buffer = new char[50];
+			ctime_s(_Buffer, 50, &now);
+			string dt = _Buffer;
+			admFile << dt << '\n';
+			amountCheck();
+			products = new Product[amount];
+			for (int i = 0; i < amount; i++)
+			{
+				products[i].initProduct(inFile);
+				admFile << products[i].getID() << ' ';
+				admFile << products[i].getAvailable() << ' ';
+				admFile << products[i].getPrice() << ' ';
+				admFile << products[i].getBrand() << ' ';
+				admFile << products[i].getType() << '\n';
+				oplata += products[i].getPrice() * products[i].getAvailable();
+			}
+			cout << "\n";
+			inFile.close();
+			admFile.close();
+		}
 		int tmp = oplata;
 		oplata = 0;
 		return tmp;

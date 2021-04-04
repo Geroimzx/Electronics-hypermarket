@@ -391,5 +391,8 @@
     <Text Include="DDRsList.txt">
       <Filter>Resource Files\LaptopsAndComputers</Filter>
     </Text>
+    <Text Include="ShoppingCartAdminList.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
