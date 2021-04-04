@@ -30,19 +30,19 @@ void Tablet::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(11) << "Тип" << "|";
 	cout << setw(scale) << "ROM" << "|";
 	cout << setw(scale) << "RAM" << "|";
-	cout << setw(15) << "Процесор" << "|";
-	cout << setw(scale) << "ОС" << "|";
+	cout << setw(23) << "Процесор" << "|";
+	cout << setw(12) << "ОС" << "|";
 	cout << setw(scale) << "Діагональ екрану" << "|";
 	cout << setw(scale) << "Тип екрану" << "|";
 	cout << setw(scale) << "Основна камера" << "|";
 	cout << setw(scale) << "Фронтальна камера" << "|";
-	cout << setw(scale) << "Колір" << "|";
+	cout << setw(12) << "Колір" << "|";
 	cout << setw(scale) << "Ємність акумулятора" << "|";
 	cout << setw(scale) << "Особливості";
 	for (int i = 0; i < listSize; i++)
@@ -57,7 +57,7 @@ void Tablet::viewProducts(string filePath)
 		cout << tabletList[i].price << "|";
 		cout.width(scale);
 		cout << tabletList[i].brand << "|";
-		cout.width(scale);
+		cout.width(15);
 		cout << tabletList[i].type << "|";
 		cout.width(scale);
 		cout << tabletList[i].storageMemory << "|";
@@ -75,7 +75,7 @@ void Tablet::viewProducts(string filePath)
 		cout << tabletList[i].mainCamera << "|";
 		cout.width(17);
 		cout << tabletList[i].selfieCamera << "|";
-		cout.width(scale);
+		cout.width(13);
 		cout << tabletList[i].color << "|";
 		cout.width(19);
 		cout << tabletList[i].batteryCapacity << "|";

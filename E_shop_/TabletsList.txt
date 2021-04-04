@@ -1,0 +1,2 @@
+1 100 3999 Lenovo Планшет 32 2 HelioA22 Android9 8 IPS 5 2 Чорний 5000 NFS
+2 100 3999 Huawei Планшет 32 2 Kirin710A Android10 9.7 IPS 5 2 Чорний 5000 USBc
