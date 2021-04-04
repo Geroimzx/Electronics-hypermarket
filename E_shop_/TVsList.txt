@@ -1,0 +1,4 @@
+1 100 7999 JVC Телевізор 43 4K HDR AndroidTV
+2 100 12999 Samsung Телевізор 43 4K HDR Tizen
+3 100 14199 LG Телевізор 43 4K HDR10 WebOS
+4 100 10699 Xiaomi Телевізор 43 4K HDR10 AndroidTV

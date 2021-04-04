@@ -24,10 +24,10 @@ void TVAccessories::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(19) << "Бренд" << "|";
+	cout << setw(17) << "Тип" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -47,9 +47,9 @@ void TVAccessories::viewProducts(string filePath)
 			cout << tvAccessoriesList[i].getAvailable() << "|";
 			cout.width(scale);
 			cout << tvAccessoriesList[i].getPrice() << "|";
-			cout.width(scale);
+			cout.width(14);
 			cout << tvAccessoriesList[i].getBrand() << "|";
-			cout.width(scale);
+			cout.width(20);
 			cout << tvAccessoriesList[i].getType() << "|";
 		}
 		cout << "\n";

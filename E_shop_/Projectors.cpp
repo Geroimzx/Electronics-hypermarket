@@ -24,10 +24,10 @@ void Projectors::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(11) << "Тип" << "|";
 	cout << setw(scale) << "Роздільна здатність" << "|";
 	cout << setw(scale) << "Інтерфейс" << "|";
 	if (listSizeCheck() > 0)
@@ -54,9 +54,9 @@ void Projectors::viewProducts(string filePath)
 			cout.width(scale);
 			cout << projectorsList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(19);
 			cout << projectorsList[i].resolution << "|";
-			cout.width(scale);
+			cout.width(9);
 			cout << projectorsList[i].connectionInterface << "|";
 		}
 		cout << "\n";

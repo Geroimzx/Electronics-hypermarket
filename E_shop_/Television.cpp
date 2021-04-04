@@ -24,14 +24,14 @@ void Television::viewProducts(string filePath)
 	int scale = 10;
 	cout << "|";
 	cout << setw(scale) << "ID" << "|";
-	cout << setw(scale) << "Наявність" << "|";
-	cout << setw(scale) << "Ціна" << "|";
-	cout << setw(scale) << "Бренд" << "|";
-	cout << setw(scale) << "Тип" << "|";
+	cout << setw(19) << "Наявність" << "|";
+	cout << setw(14) << "Ціна" << "|";
+	cout << setw(15) << "Бренд" << "|";
+	cout << setw(12) << "Тип" << "|";
 	cout << setw(scale) << "Діагональ" << "|";
 	cout << setw(scale) << "Роздільна здатність" << "|";
 	cout << setw(scale) << "Технології" << "|";
-	cout << setw(scale) << "ОС" << "|";
+	cout << setw(12) << "ОС" << "|";
 	if (listSizeCheck() > 0)
 	{
 		ifstream inFile;
@@ -56,9 +56,9 @@ void Television::viewProducts(string filePath)
 			cout.width(scale);
 			cout << televisionList[i].getType() << "|";
 
-			cout.width(scale);
+			cout.width(9);
 			cout << televisionList[i].diagonal << "|";
-			cout.width(scale);
+			cout.width(19);
 			cout << televisionList[i].resolution << "|";
 			cout.width(scale);
 			cout << televisionList[i].technology << "|";
